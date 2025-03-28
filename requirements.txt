@@ -1,0 +1,13 @@
+streamlit
+pandas
+numpy
+scipy
+matplotlib
+seaborn
+plotly
+streamlit-mermaid
+scikit-learn
+statsmodels
+openpyxl
+xlsxwriter
+# google-generativeai # Commented out as it's not currently used
