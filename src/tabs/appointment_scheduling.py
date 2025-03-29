@@ -1,7 +1,8 @@
 # src/tabs/appointment_scheduling.py
 import streamlit as st
 import pandas as pd
-from datetime import datetime, date, time
+from datetime import datetime, date, time, timedelta
+from streamlit_calendar import calendar # Import the calendar component
 
 # Import database functions from data_loader
 try:
@@ -27,13 +28,11 @@ except ImportError:
 
 # --- Constants ---
 APPOINTMENT_TYPES = ["New Patient", "Follow-up", "Consultation", "Check-up", "Procedure", "Other"]
-APPOINTMENT_STATUSES = ["Scheduled", "Confirmed", "Checked-in", "Completed", "Cancelled", "No-Show"]
+APPOINTMENT_STATUSES = ["Scheduled", "Confirmed", "Checked-in", "Appointment Started", "Completed", "Cancelled", "No-Show"] # Added new status
 CONFIRMATION_STATUSES = ["Not Confirmed", "Confirmed", "Reminder Sent"]
 REMINDER_TYPES = ["None", "SMS", "Email", "Phone Call"]
-# Define some common options, but allow free text too
 BOOKING_CHANNELS = ["Online Portal", "Phone", "In-Person", "Referral", "Other"]
 REFERRAL_SOURCES = ["Website", "GP Referral", "Existing Patient", "Advertisement", "Walk-in", "Other"]
-
 
 # --- Helper Functions ---
 def combine_date_time(date_part, time_part):
@@ -42,120 +41,53 @@ def combine_date_time(date_part, time_part):
         return datetime.combine(date_part, time_part)
     return None
 
-# --- Main Tab Rendering Function ---
-# Modified to accept the financial data DataFrame
-def render_appointment_scheduling_tab(df_financial_data):
-    """Renders the Appointment Scheduling tab content."""
-    st.header("📅 Appointment Scheduling")
+def format_appointments_for_calendar(df_appointments):
+    """Formats the appointment DataFrame for the streamlit-calendar component."""
+    events = []
+    if df_appointments.empty:
+        return events
 
-    # --- Fetch Initial Data ---
-    # Get distinct doctors from the financial data
-    # Use session state to store doctors/patients to avoid repeated DB calls
-    # We pass df_financial_data now
-    if 'distinct_doctors' not in st.session_state or st.session_state.get('doctor_list_source') != 'financial':
-        st.session_state.distinct_doctors = get_distinct_doctors(df_financial_data)
-        st.session_state.doctor_list_source = 'financial' # Mark the source
+    for index, row in df_appointments.iterrows():
+        # Ensure AppointmentDateTime is a datetime object
+        if pd.isna(row['AppointmentDateTime']):
+            continue # Skip rows with invalid datetime
 
-    if 'distinct_patients' not in st.session_state:
-        st.session_state.distinct_patients = get_distinct_patients() # Fetch patients for potential future use
+        start_time = row['AppointmentDateTime']
+        # Estimate end time (e.g., 30 minutes later) if not available
+        # You might want a more sophisticated way to handle duration later
+        end_time = start_time + timedelta(minutes=30)
 
-    distinct_doctors = st.session_state.distinct_doctors
-    # Handle case where doctor list might be empty
-    if not distinct_doctors:
-        st.warning("Could not retrieve doctor list from financial data. Please ensure 'Doctor' column exists and has data.")
-        distinct_doctors = [] # Prevent errors in selectbox
+        # Define event color based on status
+        color = "#1f77b4" # Default blue
+        if row['AppointmentStatus'] == 'Completed':
+            color = "green"
+        elif row['AppointmentStatus'] in ['Cancelled', 'No-Show']:
+            color = "red"
+        elif row['AppointmentStatus'] == 'Checked-in':
+            color = "orange"
+        elif row['AppointmentStatus'] == 'Appointment Started':
+             color = "yellow"
 
-    # --- Add New Appointment Form ---
-    st.subheader("Add New Appointment")
-    with st.form("add_appointment_form", clear_on_submit=True):
-        col1, col2, col3 = st.columns(3) # Use 3 columns for more fields
-        with col1:
-            patient_name = st.text_input("Patient Name*", key="add_patient_name")
-            appointment_date = st.date_input("Appointment Date*", key="add_date", value=date.today())
-            appointment_time = st.time_input("Appointment Time*", key="add_time", value=time(9, 0))
-            appointment_type = st.selectbox("Appointment Type", APPOINTMENT_TYPES, key="add_type")
+        event = {
+            "title": f"{row['PatientName']} w/ {row['DoctorName']}",
+            "start": start_time.isoformat(),
+            "end": end_time.isoformat(),
+            "color": color,
+            "resourceId": row['DoctorName'], # Optional: Group by doctor
+            # Add custom fields if needed, accessible in callbacks
+            "extendedProps": {
+                "appointment_id": row['AppointmentID'],
+                "status": row['AppointmentStatus'],
+                "type": row['AppointmentType']
+            }
+        }
+        events.append(event)
+    return events
 
-        with col2:
-            # Allow adding new doctors if needed, or just select existing
-            doctor_name = st.selectbox("Doctor Name*", distinct_doctors + ["Add New Doctor..."], key="add_doctor_name")
-            if doctor_name == "Add New Doctor...":
-                doctor_name = st.text_input("Enter New Doctor Name", key="add_new_doctor_name")
+# --- Rendering Functions for Views ---
 
-            # Use selectbox for booking channel and referral source
-            booking_channel = st.selectbox("Booking Channel", BOOKING_CHANNELS, key="add_booking_channel")
-            referral_source = st.selectbox("Referral Source", REFERRAL_SOURCES, key="add_referral_source")
-            confirmation_status = st.selectbox("Confirmation Status", CONFIRMATION_STATUSES, key="add_confirm_status")
-
-        with col3:
-            # Time Tracking Inputs (Optional on Add)
-            patient_arrival_time = st.time_input("Patient Arrival Time", value=None, key="add_arrival_time")
-            appointment_start_time = st.time_input("Appointment Start Time", value=None, key="add_start_time")
-            appointment_end_time = st.time_input("Appointment End Time", value=None, key="add_end_time")
-            reminder_type = st.selectbox("Reminder Type", REMINDER_TYPES, key="add_reminder_type")
-
-        submitted = st.form_submit_button("Add Appointment")
-        if submitted:
-            # Basic Validation
-            if not patient_name or not doctor_name or not appointment_date or not appointment_time:
-                st.error("Please fill in all required fields (*).")
-            else:
-                appointment_datetime = combine_date_time(appointment_date, appointment_time)
-                if appointment_datetime:
-                    # Add booking time automatically
-                    booking_datetime = datetime.now()
-                    success = add_appointment(
-                        patient_name=patient_name,
-                        doctor_name=doctor_name,
-                        appointment_datetime=appointment_datetime,
-                        appointment_type=appointment_type,
-                        booking_datetime=booking_datetime,
-                        confirmation_status=confirmation_status,
-                        reminder_type=reminder_type,
-                        booking_channel=booking_channel, # Pass new fields
-                        referral_source=referral_source,
-                        patient_arrival_time=patient_arrival_time,
-                        appointment_start_time=appointment_start_time,
-                        appointment_end_time=appointment_end_time
-                    )
-                    if success:
-                        st.success("Appointment added successfully!")
-                        # Refresh doctor list (re-fetch from financial data) if a new one was added
-                        # Note: This assumes adding a new doctor via text input should ideally update the source data,
-                        # but for now, we just refresh the list from the existing financial data.
-                        # A better approach might be to manage doctors in a separate table.
-                        if doctor_name not in st.session_state.distinct_doctors:
-                             st.session_state.distinct_doctors = get_distinct_doctors(df_financial_data)
-                             st.session_state.doctor_list_source = 'financial'
-                        st.rerun() # Rerun to update the view table
-                    else:
-                        st.error("Failed to add appointment.")
-                else:
-                    st.error("Invalid date or time.")
-
-    st.divider()
-
-    # --- View, Edit, Delete Appointments ---
-    st.subheader("Manage Appointments")
-
-    # Filters
-    col_f1, col_f2, col_f3, col_f4 = st.columns(4)
-    with col_f1:
-        filter_start_date = st.date_input("Start Date", value=None, key="filter_start")
-    with col_f2:
-        filter_end_date = st.date_input("End Date", value=None, key="filter_end")
-    with col_f3:
-        filter_doctor = st.selectbox("Filter by Doctor", ["All"] + distinct_doctors, key="filter_doctor")
-    with col_f4:
-        filter_status = st.selectbox("Filter by Status", ["All"] + APPOINTMENT_STATUSES, key="filter_status")
-
-    # Fetch and display appointments
-    df_appointments = get_appointments(
-        start_date_filter=filter_start_date,
-        end_date_filter=filter_end_date,
-        doctor_filter=filter_doctor,
-        status_filter=filter_status
-    )
-
+def render_table_view(df_appointments, distinct_doctors, df_financial_data):
+    """Renders the table view for managing appointments."""
     if df_appointments.empty:
         st.info("No appointments found matching the criteria.")
     else:
@@ -278,12 +210,187 @@ def render_appointment_scheduling_tab(df_financial_data):
                 else:
                     st.error(f"Failed to delete appointment {selected_appointment_id}.")
 
-# Example usage (if run directly)
-# Example usage (if run directly - requires dummy data for df_financial_data)
-if __name__ == "__main__":
-    st.set_page_config(layout="wide")
-    # Create dummy financial data for direct execution testing
-    dummy_financial_data = pd.DataFrame({
-        'Doctor': ['Dr. Smith', 'Dr. Jones', 'Dr. Smith']
-    })
-    render_appointment_scheduling_tab(dummy_financial_data)
+def render_calendar_view(df_appointments):
+    """Renders the calendar view for appointments."""
+    st.subheader("Calendar View")
+
+    calendar_options = {
+        "headerToolbar": {
+            "left": "prev,next today",
+            "center": "title",
+            "right": "dayGridMonth,timeGridWeek,timeGridDay",
+        },
+        "initialView": "dayGridMonth",
+        "resourceGroupField": "resourceId", # Optional: Group by doctor if using resource view
+        "editable": False, # Set to True to allow drag-and-drop editing (requires callback handling)
+        "selectable": True,
+        "selectMirror": True,
+        "slotMinTime": "08:00:00", # Optional: Set earliest time displayed
+        "slotMaxTime": "20:00:00", # Optional: Set latest time displayed
+        "height": "auto", # Adjust height automatically
+    }
+
+    custom_css = """
+        .fc-event-past { opacity: 0.8; }
+        .fc-event-time { font-style: italic; }
+        .fc-event-title { font-weight: 700; }
+        .fc-toolbar-title { font-size: 1.5rem; }
+    """
+
+    # Format data for calendar
+    calendar_events = format_appointments_for_calendar(df_appointments)
+
+    if not calendar_events:
+        st.info("No appointments to display in the calendar for the selected criteria.")
+        return
+
+    # Display the calendar
+    calendar_widget = calendar(
+        events=calendar_events,
+        options=calendar_options,
+        custom_css=custom_css,
+        key="appointment_calendar" # Unique key for the calendar component
+    )
+
+    # Handle calendar interactions (optional)
+    if calendar_widget:
+        if 'eventClick' in calendar_widget:
+            event_info = calendar_widget['eventClick']['event']
+            st.info(f"Clicked Event: {event_info.get('title', 'N/A')}")
+            # You could display event details or open an edit modal here
+        # Add handling for dateClick, select, etc. if needed
+
+
+# --- Main Tab Rendering Function ---
+# Modified to accept the financial data DataFrame
+def render_appointment_scheduling_tab(df_financial_data):
+    """Renders the Appointment Scheduling tab content."""
+    st.header("📅 Appointment Scheduling")
+
+    # --- Fetch Initial Data ---
+    # Get distinct doctors from the financial data
+    # Use session state to store doctors/patients to avoid repeated DB calls
+    # We pass df_financial_data now
+    if 'distinct_doctors' not in st.session_state or st.session_state.get('doctor_list_source') != 'financial':
+        st.session_state.distinct_doctors = get_distinct_doctors(df_financial_data)
+        st.session_state.doctor_list_source = 'financial' # Mark the source
+
+    if 'distinct_patients' not in st.session_state:
+        st.session_state.distinct_patients = get_distinct_patients() # Fetch patients for potential future use
+
+    distinct_doctors = st.session_state.distinct_doctors
+    # Handle case where doctor list might be empty
+    if not distinct_doctors:
+        st.warning("Could not retrieve doctor list from financial data. Please ensure 'Doctor' column exists and has data.")
+        distinct_doctors = [] # Prevent errors in selectbox
+
+    # --- Add New Appointment Form ---
+    # Use an expander for the form to keep the main view cleaner
+    with st.expander("➕ Add New Appointment", expanded=False):
+        with st.form("add_appointment_form", clear_on_submit=True):
+            col1, col2, col3 = st.columns(3) # Use 3 columns for more fields
+            with col1:
+                patient_name = st.text_input("Patient Name*", key="add_patient_name")
+                appointment_date = st.date_input("Appointment Date*", key="add_date", value=date.today())
+                appointment_time = st.time_input("Appointment Time*", key="add_time", value=time(9, 0))
+                appointment_type = st.selectbox("Appointment Type", APPOINTMENT_TYPES, key="add_type")
+
+            with col2:
+                # Allow adding new doctors if needed, or just select existing
+                doctor_name = st.selectbox("Doctor Name*", distinct_doctors + ["Add New Doctor..."], key="add_doctor_name")
+                if doctor_name == "Add New Doctor...":
+                    doctor_name = st.text_input("Enter New Doctor Name", key="add_new_doctor_name")
+
+                # Use selectbox for booking channel and referral source
+                booking_channel = st.selectbox("Booking Channel", BOOKING_CHANNELS, key="add_booking_channel")
+                referral_source = st.selectbox("Referral Source", REFERRAL_SOURCES, key="add_referral_source")
+                confirmation_status = st.selectbox("Confirmation Status", CONFIRMATION_STATUSES, key="add_confirm_status")
+
+            with col3:
+                # Time Tracking Inputs (Optional on Add)
+                patient_arrival_time = st.time_input("Patient Arrival Time", value=None, key="add_arrival_time")
+                appointment_start_time = st.time_input("Appointment Start Time", value=None, key="add_start_time")
+                appointment_end_time = st.time_input("Appointment End Time", value=None, key="add_end_time")
+                reminder_type = st.selectbox("Reminder Type", REMINDER_TYPES, key="add_reminder_type")
+
+            submitted = st.form_submit_button("Add Appointment")
+            if submitted:
+                # Basic Validation
+                if not patient_name or not doctor_name or not appointment_date or not appointment_time:
+                    st.error("Please fill in all required fields (*).")
+                else:
+                    appointment_datetime = combine_date_time(appointment_date, appointment_time)
+                    if appointment_datetime:
+                        # Add booking time automatically
+                        booking_datetime = datetime.now()
+                        success = add_appointment(
+                            patient_name=patient_name,
+                            doctor_name=doctor_name,
+                            appointment_datetime=appointment_datetime,
+                            appointment_type=appointment_type,
+                            booking_datetime=booking_datetime,
+                            confirmation_status=confirmation_status,
+                            reminder_type=reminder_type,
+                            booking_channel=booking_channel, # Pass new fields
+                            referral_source=referral_source,
+                            patient_arrival_time=patient_arrival_time,
+                            appointment_start_time=appointment_start_time,
+                            appointment_end_time=appointment_end_time
+                        )
+                        if success:
+                            st.success("Appointment added successfully!")
+                            # Refresh doctor list (re-fetch from financial data) if a new one was added
+                            # Note: This assumes adding a new doctor via text input should ideally update the source data,
+                            # but for now, we just refresh the list from the existing financial data.
+                            # A better approach might be to manage doctors in a separate table.
+                            if doctor_name not in st.session_state.distinct_doctors:
+                                 st.session_state.distinct_doctors = get_distinct_doctors(df_financial_data)
+                                 st.session_state.doctor_list_source = 'financial'
+                            st.rerun() # Rerun to update the view table
+                        else:
+                            st.error("Failed to add appointment.")
+                    else:
+                        st.error("Invalid date or time.")
+
+    st.divider()
+
+    # --- View Toggle and Filters ---
+    view_options = ["Table View", "Calendar View"]
+    selected_view = st.radio("Select View", view_options, horizontal=True, key="appt_view_toggle")
+
+    st.subheader("Filter Appointments")
+    # Filters
+    col_f1, col_f2, col_f3, col_f4 = st.columns(4)
+    with col_f1:
+        filter_start_date = st.date_input("Start Date", value=None, key="filter_start")
+    with col_f2:
+        filter_end_date = st.date_input("End Date", value=None, key="filter_end")
+    with col_f3:
+        filter_doctor = st.selectbox("Filter by Doctor", ["All"] + distinct_doctors, key="filter_doctor")
+    with col_f4:
+        filter_status = st.selectbox("Filter by Status", ["All"] + APPOINTMENT_STATUSES, key="filter_status")
+
+    # Fetch appointments based on filters
+    # Load ALL appointments if no date filter is applied for the calendar view
+    # Otherwise, load based on filter for table view or if dates are set
+    if selected_view == "Calendar View" and filter_start_date is None and filter_end_date is None:
+         df_appointments = get_appointments(
+            doctor_filter=filter_doctor,
+            status_filter=filter_status
+         )
+    else:
+        df_appointments = get_appointments(
+            start_date_filter=filter_start_date,
+            end_date_filter=filter_end_date,
+            doctor_filter=filter_doctor,
+            status_filter=filter_status
+        )
+
+
+    # --- Display Selected View ---
+    if selected_view == "Table View":
+        render_table_view(df_appointments, distinct_doctors, df_financial_data)
+    elif selected_view == "Calendar View":
+        render_calendar_view(df_appointments)
+
+# Removed the __main__ block

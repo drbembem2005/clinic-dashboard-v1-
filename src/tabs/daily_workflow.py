@@ -5,7 +5,7 @@ from datetime import datetime, date, time
 
 # Import database functions from data_loader
 try:
-    # Use relative import if data_loader is in the parent directory
+    # Import get_distinct_doctors as well
     from ..data_loader import get_appointments, update_appointment, get_distinct_doctors
 except ImportError:
     from data_loader import get_appointments, update_appointment, get_distinct_doctors
@@ -39,12 +39,19 @@ def render_daily_workflow_tab(df_financial_data): # df_financial_data is needed 
 
     # --- Display Status Counts ---
     st.subheader("Today's Summary")
+    total_appointments_today = len(df_all_today)
     status_counts = df_all_today['AppointmentStatus'].value_counts()
     # Ensure all statuses are represented, even if count is 0
     status_metrics = {status: status_counts.get(status, 0) for status in APPOINTMENT_STATUSES}
-    cols_counts = st.columns(len(status_metrics))
+
+    # Add Total Appointments metric first
+    summary_cols = st.columns(len(status_metrics) + 1) # Add one column for Total
+    with summary_cols[0]:
+        st.metric("Total Today", total_appointments_today)
+
+    # Display status counts in remaining columns
     for i, (status_name, count) in enumerate(status_metrics.items()):
-         with cols_counts[i]:
+         with summary_cols[i+1]: # Offset index by 1
             st.metric(label=status_name, value=count)
     st.divider()
 
@@ -284,6 +291,8 @@ def render_daily_workflow_tab(df_financial_data): # df_financial_data is needed 
                      if end_time_recorded:
                          st.metric("Ended", end_time_str)
 
-    # Requires dummy financial data if get_distinct_doctors needs it
-    dummy_financial_data = pd.DataFrame({'Doctor': []})
-    render_daily_workflow_tab(dummy_financial_data)
+                with metric_cols[3]:
+                     if status == 'Completed' and duration_display != "--":
+                         st.metric("Duration", duration_display)
+
+# Removed the __main__ block to prevent duplicate key errors when imported

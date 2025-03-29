@@ -10,4 +10,5 @@ scikit-learn
 statsmodels
 openpyxl
 xlsxwriter
+streamlit-calendar # Added for interactive calendar view
 # google-generativeai # Commented out as it's not currently used
