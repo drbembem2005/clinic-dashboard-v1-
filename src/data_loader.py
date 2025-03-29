@@ -2,7 +2,10 @@
 import pandas as pd
 import numpy as np
 import streamlit as st
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date, time # Added date, time
+import sqlite3 # Added for SQLite
+import uuid # Added for generating unique IDs
+import os # Added for constructing DB path
 
 @st.cache_data(ttl=3600)
 def load_data():
@@ -124,3 +127,257 @@ def load_data():
 
 
     return df_data
+
+
+# --- Appointment Data Handling (SQLite) ---
+
+APPOINTMENTS_DB_PATH = "clinic_appointments.db"
+
+def connect_db():
+    """Connects to the SQLite database."""
+    conn = sqlite3.connect(APPOINTMENTS_DB_PATH)
+    conn.row_factory = sqlite3.Row # Return rows as dictionary-like objects
+    return conn
+
+def create_appointments_table():
+    """Creates the appointments table if it doesn't exist."""
+    conn = connect_db()
+    cursor = conn.cursor()
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS appointments (
+            AppointmentID TEXT PRIMARY KEY,
+            PatientName TEXT NOT NULL,
+            DoctorName TEXT NOT NULL,
+            AppointmentDateTime TEXT NOT NULL, -- Store as ISO format string
+            AppointmentType TEXT,
+            AppointmentStatus TEXT DEFAULT 'Scheduled',
+            BookingDateTime TEXT, -- Store as ISO format string
+            CancellationDateTime TEXT, -- Store as ISO format string
+            ConfirmationStatus TEXT,
+            ReminderType TEXT,
+            BookingChannel TEXT, -- Added
+            ReferralSource TEXT, -- Added
+            PatientArrivalTime TEXT, -- Added - Store as ISO time string HH:MM:SS
+            AppointmentStartTime TEXT, -- Added - Store as ISO time string HH:MM:SS
+            AppointmentEndTime TEXT -- Added - Store as ISO time string HH:MM:SS
+        )
+    """)
+    conn.commit()
+    conn.close()
+
+# Ensure the table exists when the module is loaded and update schema if needed
+# This simple check might not handle all schema migration scenarios robustly
+def update_schema():
+    conn = connect_db()
+    cursor = conn.cursor()
+    try:
+        # Check for one of the new columns
+        cursor.execute("PRAGMA table_info(appointments)")
+        columns = [info['name'] for info in cursor.fetchall()]
+        if 'BookingChannel' not in columns:
+            cursor.execute("ALTER TABLE appointments ADD COLUMN BookingChannel TEXT")
+        if 'ReferralSource' not in columns:
+            cursor.execute("ALTER TABLE appointments ADD COLUMN ReferralSource TEXT")
+        if 'PatientArrivalTime' not in columns:
+            cursor.execute("ALTER TABLE appointments ADD COLUMN PatientArrivalTime TEXT")
+        if 'AppointmentStartTime' not in columns:
+            cursor.execute("ALTER TABLE appointments ADD COLUMN AppointmentStartTime TEXT")
+        if 'AppointmentEndTime' not in columns:
+            cursor.execute("ALTER TABLE appointments ADD COLUMN AppointmentEndTime TEXT")
+        conn.commit()
+    except sqlite3.Error as e:
+        st.warning(f"Could not update table schema: {e}") # Warn instead of error
+    finally:
+        conn.close()
+
+create_appointments_table()
+update_schema() # Attempt to update schema after ensuring table exists
+
+def add_appointment(patient_name, doctor_name, appointment_datetime, appointment_type,
+                    booking_datetime=None, confirmation_status=None, reminder_type=None,
+                    booking_channel=None, referral_source=None, patient_arrival_time=None,
+                    appointment_start_time=None, appointment_end_time=None): # Added new params
+    """Adds a new appointment to the database."""
+    conn = connect_db()
+    cursor = conn.cursor()
+    appointment_id = str(uuid.uuid4()) # Generate a unique ID
+    booking_dt_str = booking_datetime.isoformat() if booking_datetime else None
+    appointment_dt_str = appointment_datetime.isoformat()
+    # Convert time objects to ISO strings
+    arrival_time_str = patient_arrival_time.isoformat() if isinstance(patient_arrival_time, time) else patient_arrival_time
+    start_time_str = appointment_start_time.isoformat() if isinstance(appointment_start_time, time) else appointment_start_time
+    end_time_str = appointment_end_time.isoformat() if isinstance(appointment_end_time, time) else appointment_end_time
+
+
+    try:
+        cursor.execute("""
+            INSERT INTO appointments (
+                AppointmentID, PatientName, DoctorName, AppointmentDateTime, AppointmentType,
+                AppointmentStatus, BookingDateTime, ConfirmationStatus, ReminderType,
+                BookingChannel, ReferralSource, PatientArrivalTime, AppointmentStartTime, AppointmentEndTime
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (
+            appointment_id, patient_name, doctor_name, appointment_dt_str, appointment_type,
+            'Scheduled', booking_dt_str, confirmation_status, reminder_type,
+            booking_channel, referral_source, arrival_time_str, start_time_str, end_time_str
+        ))
+        conn.commit()
+        return True
+    except sqlite3.Error as e:
+        st.error(f"Database error adding appointment: {e}")
+        return False
+    finally:
+        conn.close()
+
+def get_appointments(start_date_filter=None, end_date_filter=None, doctor_filter=None, status_filter=None):
+    """Retrieves appointments from the database, optionally filtered."""
+    conn = connect_db()
+    cursor = conn.cursor()
+    query = "SELECT * FROM appointments"
+    filters = []
+    params = []
+
+    if start_date_filter:
+        # Assuming start_date_filter is a date object
+        start_dt_str = datetime.combine(start_date_filter, time.min).isoformat()
+        filters.append("AppointmentDateTime >= ?")
+        params.append(start_dt_str)
+    if end_date_filter:
+        # Assuming end_date_filter is a date object
+        end_dt_str = datetime.combine(end_date_filter, time.max).isoformat()
+        filters.append("AppointmentDateTime <= ?")
+        params.append(end_dt_str)
+    if doctor_filter and doctor_filter != "All":
+        filters.append("DoctorName = ?")
+        params.append(doctor_filter)
+    if status_filter and status_filter != "All":
+        filters.append("AppointmentStatus = ?")
+        params.append(status_filter)
+
+    if filters:
+        query += " WHERE " + " AND ".join(filters)
+
+    query += " ORDER BY AppointmentDateTime ASC" # Order by date/time
+
+    try:
+        cursor.execute(query, params)
+        appointments = cursor.fetchall()
+        # Convert to DataFrame
+        df_appointments = pd.DataFrame([dict(row) for row in appointments])
+        # Convert datetime columns back from string
+        if not df_appointments.empty:
+            for col in ['AppointmentDateTime', 'BookingDateTime', 'CancellationDateTime']:
+                if col in df_appointments.columns:
+                    df_appointments[col] = pd.to_datetime(df_appointments[col], errors='coerce')
+        return df_appointments
+    except sqlite3.Error as e:
+        st.error(f"Database error getting appointments: {e}")
+        return pd.DataFrame() # Return empty DataFrame on error
+    finally:
+        conn.close()
+
+
+def update_appointment(appointment_id, updates):
+    """Updates an existing appointment."""
+    conn = connect_db()
+    cursor = conn.cursor()
+    set_clauses = []
+    params = []
+    current_time_str = datetime.now().isoformat()
+
+    # Handle Cancellation Time automatically if status is set to Cancelled
+    if updates.get('AppointmentStatus') == 'Cancelled' and 'CancellationDateTime' not in updates:
+        updates['CancellationDateTime'] = current_time_str
+    # Clear cancellation time if status is changed away from Cancelled
+    elif 'AppointmentStatus' in updates and updates['AppointmentStatus'] != 'Cancelled':
+         updates['CancellationDateTime'] = None # Set to NULL in DB
+
+    # Convert datetime/time objects to ISO strings for storage
+    if 'AppointmentDateTime' in updates and isinstance(updates['AppointmentDateTime'], datetime):
+        updates['AppointmentDateTime'] = updates['AppointmentDateTime'].isoformat()
+    if 'BookingDateTime' in updates and isinstance(updates['BookingDateTime'], datetime):
+        updates['BookingDateTime'] = updates['BookingDateTime'].isoformat()
+    # CancellationDateTime is handled above or passed as string
+    if 'PatientArrivalTime' in updates and isinstance(updates['PatientArrivalTime'], time):
+        updates['PatientArrivalTime'] = updates['PatientArrivalTime'].isoformat()
+    if 'AppointmentStartTime' in updates and isinstance(updates['AppointmentStartTime'], time):
+        updates['AppointmentStartTime'] = updates['AppointmentStartTime'].isoformat()
+    if 'AppointmentEndTime' in updates and isinstance(updates['AppointmentEndTime'], time):
+        updates['AppointmentEndTime'] = updates['AppointmentEndTime'].isoformat()
+
+
+    for key, value in updates.items():
+        # Ensure we only try to update valid columns
+        valid_columns = [
+            "PatientName", "DoctorName", "AppointmentDateTime", "AppointmentType",
+            "AppointmentStatus", "BookingDateTime", "CancellationDateTime",
+            "ConfirmationStatus", "ReminderType", "BookingChannel", "ReferralSource",
+            "PatientArrivalTime", "AppointmentStartTime", "AppointmentEndTime"
+        ]
+        if key in valid_columns:
+            set_clauses.append(f"{key} = ?")
+            params.append(value)
+
+    if not set_clauses:
+        st.warning("No valid fields provided for update.")
+        conn.close()
+        return False
+
+    params.append(appointment_id) # For the WHERE clause
+    query = f"UPDATE appointments SET {', '.join(set_clauses)} WHERE AppointmentID = ?"
+
+    try:
+        cursor.execute(query, params)
+        conn.commit()
+        return cursor.rowcount > 0 # Return True if a row was updated
+    except sqlite3.Error as e:
+        st.error(f"Database error updating appointment {appointment_id}: {e}")
+        return False
+    finally:
+        conn.close()
+
+def delete_appointment(appointment_id):
+    """Deletes an appointment from the database."""
+    conn = connect_db()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("DELETE FROM appointments WHERE AppointmentID = ?", (appointment_id,))
+        conn.commit()
+        return cursor.rowcount > 0 # Return True if a row was deleted
+    except sqlite3.Error as e:
+        st.error(f"Database error deleting appointment {appointment_id}: {e}")
+        return False
+    finally:
+        conn.close()
+
+# Modified to get doctors from the main financial DataFrame
+def get_distinct_doctors(df_financial_data):
+    """Gets a list of distinct doctor names from the financial data DataFrame."""
+    if df_financial_data is not None and "Doctor" in df_financial_data.columns:
+        try:
+            # Get unique, non-null doctor names and sort them
+            doctors = df_financial_data["Doctor"].dropna().unique().tolist()
+            doctors.sort()
+            return doctors
+        except Exception as e:
+            st.error(f"Error getting distinct doctors from DataFrame: {e}")
+            return []
+    else:
+        st.warning("Financial data or 'Doctor' column not available for fetching doctor list.")
+        return []
+
+
+def get_distinct_patients():
+    """Gets a list of distinct patient names from the appointments table."""
+    conn = connect_db()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("SELECT DISTINCT PatientName FROM appointments ORDER BY PatientName")
+        patients = [row['PatientName'] for row in cursor.fetchall()]
+        return patients
+    except sqlite3.Error as e:
+        st.error(f"Database error getting distinct patients: {e}")
+        return []
+    finally:
+        conn.close()

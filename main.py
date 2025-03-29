@@ -24,6 +24,8 @@ try:
     from tabs.operational_metrics import render_operational_metrics_tab
     from tabs.ai_predictions import render_ai_predictions_tab
     from tabs.detailed_reports import render_detailed_reports_tab
+    from tabs.appointment_scheduling import render_appointment_scheduling_tab
+    from tabs.daily_workflow import render_daily_workflow_tab # Added import for daily workflow
 except ImportError as e:
     st.error(f"Error importing modules: {e}")
     st.error(f"Current sys.path: {sys.path}")
@@ -65,6 +67,8 @@ tab_list = [
     "👨‍⚕️ Doctor Analytics",
     "👥 Patient Insights",
     "🔍 Operational Metrics",
+    "⏱️ Daily Workflow", # Added new tab
+    "📅 Appointment Scheduling",
     "🤖 AI Predictions & Analytics",
     "📋 Detailed Reports"
 ]
@@ -88,10 +92,18 @@ with tabs[3]:
 with tabs[4]:
     render_operational_metrics_tab(filtered_df, start_date, end_date) # Pass start/end dates for calculations like avg daily visits
 
+# Corrected indices and calls for subsequent tabs
 with tabs[5]:
-    render_ai_predictions_tab(filtered_df)
+    render_daily_workflow_tab(df_data) # Call to render the new daily workflow tab
 
 with tabs[6]:
+    # Pass the main financial data DataFrame to the scheduling tab
+    render_appointment_scheduling_tab(df_data)
+
+with tabs[7]:
+    render_ai_predictions_tab(filtered_df)
+
+with tabs[8]:
     render_detailed_reports_tab(filtered_df, start_date, end_date) # Pass start/end dates for report range default
 
 # --- Footer or Final Message (Optional) ---

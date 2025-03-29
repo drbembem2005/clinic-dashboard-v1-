@@ -1,0 +1,603 @@
+﻿id,date,Patient,Doctor,visit type,operation type,gross income,cash pay,visa pay,doctor comission payed,com name,com pay,net cash income,net income,CONTACTS,coupons,doctor comission percent,T.doc.com,com to be payed
+1,"Wednesday, January 1, 2025",Noha Sobhy,Mayar,session,,600,600,,,,,600,600,,,50%,300,300
+2,"Wednesday, January 1, 2025",Hassan Fadl,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+3,"Wednesday, January 1, 2025",Noura Rafik,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+4,"Wednesday, January 1, 2025",Ahmed Nasr,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+5,"Wednesday, January 1, 2025",Eman Lutfy,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+6,"Wednesday, January 1, 2025",Aliaa Ezz Eldin,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+7,"Wednesday, January 1, 2025",Aml Hashem,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+8,"Wednesday, January 1, 2025",Nagat Mohammed,Ahmed Sa3d,Consult.,,50,50,,,,,50,50,,,50%,25,25
+9,"Wednesday, January 1, 2025",Rehab Kamel,Gamal Abdelsadik,examin.,dressing,550,550,,,ekshef,80,470,470,,,50%,235,235
+10,"Wednesday, January 1, 2025",Habiba Mohammed,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+11,"Wednesday, January 1, 2025",Abo Bakr Atta,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+12,"Wednesday, January 1, 2025",Hassan Morssal,Bahaa Dwedar,examin.,,400,400,,,,,400,400,,,50%,200,200
+13,"Wednesday, January 1, 2025",Marwa Aman,Hany Mouharam,examin.,غسيل اذنين,500,500,,,ekshef,80,420,420,,,50%,210,210
+14,"Wednesday, January 1, 2025",Omar Magdy,Hany Mouharam,examin.,,400,400,,,,,400,400,,,50%,200,200
+15,"Wednesday, January 1, 2025",Mohammed Attia,Hany Mouharam,examin.,,400,400,,,,,400,400,,,50%,200,200
+16,"Wednesday, January 1, 2025",Ahmed Yousry,Mahmoud Al-bosaily,Consult.,,2000,2000,,,,,2000,2000,,,50%,1000,1000
+17,"Wednesday, January 1, 2025",Nourhan Raafat,Mohamed Gameil,examin.,voda Cash,600,0,600,,p.vezeta,300,-300,300,,,50%,150,150
+18,"Wednesday, January 1, 2025",Alaa Mohammed,Ms. Sawsan,other,محلول حديد,400,400,,,,,400,400,,,0%,0,0
+19,"Thursday, January 2, 2025",Abdelrahem Mohamed,hasan hendam,examin.,اكشف / خاص,400,400,,160,ekshef,80,160,160,,,50%,160,0
+20,"Thursday, January 2, 2025",Yousef Waled,Mahmoud Al-bosaily,examin.,,200,200,,,,,200,200,,,50%,100,100
+21,"Thursday, January 2, 2025",Yazan Waled,Mahmoud Al-bosaily,examin.,عمل 3 حشوات,4400,4400,,,,,4400,4400,,,50%,2200,2200
+22,"Thursday, January 2, 2025",Magda Ahmed,Mahmoud Al-bosaily,examin.,,200,200,,,,,200,200,,,50%,100,100
+23,"Thursday, January 2, 2025",Sara Emad,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,250,150,150,,,50%,75,75
+24,"Thursday, January 2, 2025",Mohammed Hassan,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,250,150,150,,,50%,75,75
+25,"Thursday, January 2, 2025",Ghada Rashad,Bahaa Dwedar,examin.,ظفر غائر / instapay,1900,400,1500,,,,400,1900,,,50%,950,950
+26,"Thursday, January 2, 2025",Mohammed Sayed,Bahaa Dwedar,examin.,dressing/ voda cash,700,400,300,,,,400,700,,,50%,350,350
+27,"Thursday, January 2, 2025",Mona Elsayed,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+28,"Thursday, January 2, 2025",Hassan Morsal,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+29,"Thursday, January 2, 2025",Moaz Mohsen,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+30,"Thursday, January 2, 2025",Jasmin Abdullah,Basma Rabe3,examin.,,400,400,,200,,,200,200,,,50%,200,0
+31,"Thursday, January 2, 2025",Doha Tallat,Basma Rabe3,examin.,,400,400,,200,,,200,200,,,50%,200,0
+32,"Thursday, January 2, 2025",Salma Yaser,Basma Rabe3,examin.,,400,400,,200,,,200,200,,,50%,200,0
+33,"Thursday, January 2, 2025",Amira Ahmed,Basma Rabe3,examin.,,400,400,,200,,,200,200,,,50%,200,0
+34,"Saturday, January 4, 2025",Maryem Abdelkhalek,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,250,150,150,,,50%,75,75
+35,"Saturday, January 4, 2025",Mervat Ramadan,Bahaa Dwedar,Consult.,dressing,250,250,,,,,250,250,,,50%,125,125
+36,"Saturday, January 4, 2025",Hatem Farouk,Gamal Abdelsadik,examin.,,400,400,,,,,400,400,,,50%,200,200
+37,"Saturday, January 4, 2025",Maysa Shawqy,Ehab Elsaiad,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+38,"Saturday, January 4, 2025",Hanaa Sedhom,Ehab Elsaiad,examin.,,500,500,,250,,,250,250,,,50%,250,0
+39,"Saturday, January 4, 2025",Ahmed M. Elgarhy,Ezzat Sha3lan,Consult.,,300,300,,150,,,150,150,,,50%,150,0
+40,"Saturday, January 4, 2025",Mahmoud Mohamed,Ezzat Sha3lan,Consult.,,300,300,,150,,,150,150,,,50%,150,0
+41,"Saturday, January 4, 2025",Hussien Salah,Ezzat Sha3lan,examin.,Instapay,600,0,600,300,,,-300,300,,,50%,300,0
+42,"Saturday, January 4, 2025",Mohamed Yousef,Ezzat Sha3lan,examin.,,600,600,,300,,,300,300,,,50%,300,0
+43,"Saturday, January 4, 2025",Abdelrahman Yousef,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+44,"Saturday, January 4, 2025",Fahd Ali,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+45,"Saturday, January 4, 2025",Mahmoud A. Abozaid,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+46,"Saturday, January 4, 2025",Mohamed Tarraf,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+47,"Saturday, January 4, 2025",Nesreen Hamouda,Mahmoud Abdeen,examin.,,400,400,,140,clindo,115,145,145,,,50%,142.5,2.5
+48,"Saturday, January 4, 2025",Ghada Ahmed,Mohamed El-seba3y,Consult.,,50,50,,,,,50,50,,,50%,25,25
+49,"Saturday, January 4, 2025",Tarek Shabaan,Hany Mouharam,examin.,,400,400,,,,,400,400,,,50%,200,200
+50,"Saturday, January 4, 2025",Ahmed Ali Ahmed,Hany Mouharam,examin.,غسيل اذنين,500,500,,,,,500,500,,,50%,250,250
+51,"Saturday, January 4, 2025",Abeer 3rfan,Hany Mouharam,Consult.,,100,100,,,,,100,100,,,50%,50,50
+52,"Saturday, January 4, 2025",Alaa Rabra3,Hany Mouharam,examin.,غسيل اذنين,550,550,,,,,550,550,,,50%,275,275
+53,"Saturday, January 4, 2025",Wafaa Awad,Hany Mouharam,Consult.,Instapay,100,0,100,,,,0,100,,,50%,50,50
+54,"Saturday, January 4, 2025",Abeer 3rfan,Ahmed Sa3d,Consult.,,100,100,,,,,100,100,,,50%,50,50
+55,"Sunday, January 5, 2025",Fatma Ahmed,Sara Mansour,Consult.,,150,150,,75,,,75,75,,,50%,75,0
+56,"Sunday, January 5, 2025",Nasr Eldin Osman,Abdelaziz Abo El3ela,examin.,,500,500,,,,,500,500,,,50%,250,250
+57,"Sunday, January 5, 2025",Asmaa Ibrahim,Abdelaziz Abo El3ela,examin.,,500,500,,,,,500,500,,,50%,250,250
+58,"Sunday, January 5, 2025",Sara Mohamed,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+59,"Sunday, January 5, 2025",Rab3a Bakar,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+60,"Sunday, January 5, 2025",Soultana Mohamed,Abdelaziz Abo El3ela,examin.,,500,500,,,,,500,500,,,50%,250,250
+61,"Sunday, January 5, 2025",Mervat Salah,Abdelaziz Abo El3ela,examin.,,500,500,,,ekshef,100,400,400,,,50%,200,200
+62,"Sunday, January 5, 2025",Omima Hasan,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+63,"Sunday, January 5, 2025",Samira Goda,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+64,"Sunday, January 5, 2025",Menna Mohamed,Abdelaziz Abo El3ela,examin.,,500,500,,,,,500,500,,,50%,250,250
+65,"Sunday, January 5, 2025",Fatma,Abdelaziz Abo El3ela,examin.,زيارة منزليه / instapay,1500,0,1500,,,,0,1500,,,50%,750,750
+66,"Sunday, January 5, 2025",Mohammed Alm3taz,Mahmoud Saad,examin.,جلسة علاج طبيعي,650,650,,,,,650,650,,,50%,325,325
+67,"Sunday, January 5, 2025",Amany Mohsan,azza abdelwarieth,Consult.,U.S,200,200,,100,,,100,100,,,50%,100,0
+68,"Sunday, January 5, 2025",Rahab Kamel,Gamal Abdelsadik,Consult.,dressing,200,200,,,,,200,200,,,50%,100,100
+69,"Sunday, January 5, 2025",Afaf Mustafa ,Ahmed Sa3d,Consult.,,100,100,,,,,100,100,,,50%,50,50
+70,"Sunday, January 5, 2025",Sara Abdelbaset,Ahmed Sa3d,Consult.,,100,100,,,,,100,100,,,50%,50,50
+71,"Monday, January 6, 2025",Abo Elazm Sphinx,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,250,150,150,,,50%,75,75
+72,"Monday, January 6, 2025",Eslam Mahmoud,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,250,150,150,,,50%,75,75
+73,"Monday, January 6, 2025",Mona Elsayed,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+74,"Monday, January 6, 2025",Mariam Abdelkhlaeq,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+75,"Monday, January 6, 2025",Abbas Sa3don,Ahmed Temsah,examin.,,500,500,,250,,,250,250,,,50%,250,0
+76,"Monday, January 6, 2025",Mohamed Magdy,Ahmed Temsah,examin.,,500,500,,250,,,250,250,,,50%,250,0
+77,"Monday, January 6, 2025",Amr Abdelkhaleq,Mahmoud Al-bosaily,examin.,لصق طربوش,400,400,,,,,400,400,,,50%,200,200
+78,"Monday, January 6, 2025",Mohamed Ali,Badr Ali,Consult.,,100,100,,,,,100,100,,,50%,50,50
+79,"Monday, January 6, 2025",Maha Abdelrahim,Hany Mouharam,examin.,غسيل اذنين,550,550,,,,,550,550,,,50%,275,275
+80,"Monday, January 6, 2025",Mohamed Abdelrahim,Somia Ali,examin.,,400,400,,200,,,200,200,,,50%,200,0
+81,"Monday, January 6, 2025",Afaf Moustafa,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+82,"Monday, January 6, 2025",Nashwa Abdelhamed,Ahmed Sa3d,Consult.,,100,100,,,,,100,100,,,50%,50,50
+83,"Tuesday, January 7, 2025",Mohamed Galal,Bahaa Dwedar,examin.,Instapay,400,0,400,,p.vezeta,250,-250,150,,,50%,75,75
+84,"Tuesday, January 7, 2025",Abobakr Gaber,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,250,150,150,,,50%,75,75
+85,"Tuesday, January 7, 2025",Abobakr Gaber,Bahaa Dwedar,other,ظفر غائر ,1500,1500,,,,,1500,1500,,,50%,750,750
+86,"Tuesday, January 7, 2025",Mohamed Ahmed,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,250,150,150,,,50%,75,75
+87,"Tuesday, January 7, 2025",Mohamed Ahmed,Bahaa Dwedar,other,فتح خراج,750,750,,,,,750,750,,,50%,375,375
+88,"Tuesday, January 7, 2025",Eslam Mahmoud,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+89,"Tuesday, January 7, 2025",Amany Khalil,Mona Abdelfatah,examin.,,500,500,,250,,,250,250,,,50%,250,0
+90,"Tuesday, January 7, 2025",Hoda Omar,Ehab Elsaiad,examin.,,500,500,,250,,,250,250,,,50%,250,0
+91,"Tuesday, January 7, 2025",Mohamed Salah,Marwa Abo elwafa,examin.,,350,350,,175,,,175,175,,,50%,175,0
+92,"Tuesday, January 7, 2025",Noura Mohamed,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+93,"Tuesday, January 7, 2025",Soultana Mohamed,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+94,"Tuesday, January 7, 2025",Mazen Mohamed,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+95,"Tuesday, January 7, 2025",Mona Gamal,Abdelaziz Abo El3ela,examin.,,500,500,,,p.vezeta,350,150,150,,,50%,75,75
+96,"Tuesday, January 7, 2025",Hader Emam,Abdelaziz Abo El3ela,examin.,,500,500,,,p.vezeta,350,150,150,,,50%,75,75
+97,"Tuesday, January 7, 2025",Abdelrahman Mahmoud,Abdelaziz Abo El3ela,examin.,,500,500,,,p.vezeta,350,150,150,,,50%,75,75
+98,"Tuesday, January 7, 2025",Hend Attif Elmesalhy,Ezzat Sha3lan,examin.,,600,600,,215,clindo,170,215,215,,,50%,215,0
+99,"Tuesday, January 7, 2025",Nagy Kamal,Ezzat Sha3lan,examin.,,600,600,,300,,,300,300,,,50%,300,0
+100,"Tuesday, January 7, 2025",Abdelrahman Yousef,Ezzat Sha3lan,examin.,Visa,600,0,600,300,,,-300,300,,,50%,300,0
+101,"Tuesday, January 7, 2025",Amina Ahmed,Ezzat Sha3lan,Consult.,voda Cash,300,0,300,150,,,-150,150,,,50%,150,0
+102,"Tuesday, January 7, 2025",Amr Essam,Ahmed Mansour,examin.,غسيل اذنين,400,400,,200,,,200,200,,,50%,200,0
+103,"Tuesday, January 7, 2025",Mohamed elmo3tz,Mahmoud Saad,session,,400,400,,,,,400,400,,,50%,200,200
+104,"Tuesday, January 7, 2025",3awatif Mohamed,Mahmoud Abdeen,examin.,,400,400,,200,,,200,200,,,50%,200,0
+105,"Tuesday, January 7, 2025",Mohamed Abdelbaqy,Mahmoud Al-bosaily,examin.,,200,200,,,,,200,200,,,50%,100,100
+106,"Tuesday, January 7, 2025",Ghada Ahmed,azza abdelwarieth,Consult.,,150,150,,75,,,75,75,,,50%,75,0
+107,"Wednesday, January 8, 2025",Nahed Fathy,Mahmoud Abdeen,examin.,,400,400,,140,clindo,115,145,145,,,50%,142.5,2.5
+108,"Wednesday, January 8, 2025",Hawaa Bailo,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+109,"Wednesday, January 8, 2025",Katty Essam,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+110,"Wednesday, January 8, 2025",Afaf Mostafa,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+111,"Wednesday, January 8, 2025",Fahd Ali,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+112,"Wednesday, January 8, 2025",Sara Ibrahim,Basma Rabe3,examin.,,400,400,,160,ekshef,80,160,160,,,50%,160,0
+113,"Wednesday, January 8, 2025",Hekma Ali,Basma Rabe3,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+114,"Wednesday, January 8, 2025",Mohamed Ismail,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,250,150,150,,,50%,75,75
+115,"Wednesday, January 8, 2025",Sara Emad,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+116,"Wednesday, January 8, 2025",Mohamed Galal,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+117,"Wednesday, January 8, 2025",Alaa Zakria,Badr Ali,examin.,,400,400,,,,,400,400,,,50%,200,200
+118,"Wednesday, January 8, 2025",Tamer Mous3ad,hasan hendam,examin.,Ekshef خاص,400,400,,160,ekshef,80,160,160,,,50%,160,0
+119,"Wednesday, January 8, 2025",Mohamed Hamd,hasan hendam,examin.,,400,400,,200,,,200,200,,,50%,200,0
+120,"Wednesday, January 8, 2025", Mohamed Abdelbaky,Mahmoud Al-bosaily,Consult.,,1000,1000,,,,,1000,1000,,,50%,500,500
+121,"Wednesday, January 8, 2025",Abbas Sa3don,Ahmed Temsah,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+122,"Thursday, January 9, 2025",Lulua Abdelhalem,Badr Ali,examin.,,400,400,,,,,400,400,,,50%,200,200
+123,"Thursday, January 9, 2025",Shahd Waled,Ezzat Sha3lan,examin.,,800,800,,400,,,400,400,,,50%,400,0
+124,"Thursday, January 9, 2025",Dalia Salem,hasan hendam,examin.,,400,400,,200,,,200,200,,,50%,200,0
+125,"Thursday, January 9, 2025",Eman Salah,hasan hendam,Consult.,,0,0,,,,,0,0,,,50%,0,0
+126,"Thursday, January 9, 2025",Mohamed Awad,Basma Rabe3,examin.,,400,400,,160,ekshef,80,160,160,,,50%,160,0
+127,"Thursday, January 9, 2025",Mohamed Abdelaziz,Mona Abdelfatah,examin.,,500,500,,250,,,250,250,,,50%,250,0
+128,"Thursday, January 9, 2025",Khaled Ebeed,Mona Abdelfatah,examin.,,500,500,,250,,,250,250,,,50%,250,0
+129,"Thursday, January 9, 2025",Hager Arafa,Mona Abdelfatah,examin.,Instapay,500,430,70,250,,,180,250,,,50%,250,0
+130,"Thursday, January 9, 2025",Omar Khaled,Mona Abdelfatah,examin.,,500,500,,250,,,250,250,,,50%,250,0
+131,"Thursday, January 9, 2025",Aya Nagah,Bahaa Dwedar,examin.,,400,400,,,,,400,400,,,50%,200,200
+132,"Thursday, January 9, 2025",Mohamed Saeid,Bahaa Dwedar,examin.,,400,400,,,,,400,400,,,50%,200,200
+133,"Thursday, January 9, 2025",Donia Eltawei,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,250,150,150,,,50%,75,75
+134,"Thursday, January 9, 2025",Kholod Khaled,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+135,"Thursday, January 9, 2025",Omar Khaled,Ms. Sawsan,other,حقنة,20,20,,,,,20,20,,,0%,0,0
+136,"Saturday, January 11, 2025",Makka Ahmed,Abdelaziz Abo El3ela,examin.,,500,500,,,p.vezeta,350,150,150,,,50%,75,75
+137,"Saturday, January 11, 2025",Mahasen Mohamed,Abdelaziz Abo El3ela,examin.,,500,500,,,,,500,500,,,50%,250,250
+138,"Saturday, January 11, 2025",Menna Mohamed,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+139,"Saturday, January 11, 2025",Abdelrahman Mahmoud,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+140,"Saturday, January 11, 2025",Mohamed Refaat,Ehab Elsaiad,Consult.,dressing,400,400,,200,,,200,200,,,50%,200,0
+141,"Saturday, January 11, 2025",Mohamed Salah,Marwa Abo elwafa,session,تخاطب,350,350,,175,,,175,175,,,50%,175,0
+142,"Saturday, January 11, 2025",Samira Ali,Hany Mouharam,examin.,,400,400,,,,,400,400,,,50%,200,200
+143,"Saturday, January 11, 2025",Ali Klhaed Fawzy,Ezzat Sha3lan,examin.,,600,600,,300,,,300,300,,,50%,300,0
+144,"Saturday, January 11, 2025",Heba Saeid,Ezzat Sha3lan,examin.,voda Cash,600,0,600,300,,,-300,300,,,50%,300,0
+145,"Saturday, January 11, 2025",Yousef Ismail,Ezzat Sha3lan,examin.,,600,600,,300,,,300,300,,,50%,300,0
+146,"Saturday, January 11, 2025",Yasmin 3amir,Ezzat Sha3lan,Consult.,,300,300,,150,,,150,150,,,50%,150,0
+147,"Saturday, January 11, 2025",Mervat Ramadan,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+148,"Saturday, January 11, 2025",Magdy Omar,Bahaa Dwedar,examin.,شامل,200,200,,,p.vezeta,,200,200,,,50%,100,100
+149,"Saturday, January 11, 2025",Hussien Mohamed,Ahmed Temsah,examin.,,500,500,,250,,,250,250,,,50%,250,0
+150,"Saturday, January 11, 2025",Abdelhanan Ali,Ahmed Temsah,examin.,,500,500,,200,ekshef,100,200,200,,,50%,200,0
+151,"Saturday, January 11, 2025",Mohamed Ali,Ahmed Temsah,examin.,,400,400,,200,,,200,200,,,50%,200,0
+152,"Saturday, January 11, 2025",Wafaa Ahmed,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+153,"Saturday, January 11, 2025",Eman Fouad,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+154,"Saturday, January 11, 2025",Yasmin 3amir,Ahmed Mansour,examin.,,350,350,,175,,,175,175,,,50%,175,0
+155,"Saturday, January 11, 2025",Seham Fawzy,Mahmoud Al-bosaily,examin.,,200,200,,,,,200,200,,,50%,100,100
+156,"Saturday, January 11, 2025",Nagy Saleh,Ms. Sawsan,other,حقنة,20,20,,,,,20,20,,,0%,0,0
+157,"Saturday, January 11, 2025",Mahdy Hamd,Ms. Sawsan,other,حقنة وريد,50,50,,,,,50,50,,,0%,0,0
+158,"Sunday, January 12, 2025",Mohamed Elmo3tz,Mahmoud Saad,session,,400,400,,,,,400,400,,,50%,200,200
+159,"Sunday, January 12, 2025",Radwa Ahmed,Bahaa Dwedar,examin.,,400,400,,,,,400,400,,,50%,200,200
+160,"Sunday, January 12, 2025",Zahra Ali,Bahaa Dwedar,examin.,dressing,800,800,,,p.vezeta,250,550,550,,,50%,275,275
+161,"Sunday, January 12, 2025",Mohamed Gamil,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,250,150,150,,,50%,75,75
+162,"Sunday, January 12, 2025",Layan Khaled,Hanan Zaghlol,examin.,,400,400,,200,,,200,200,,,50%,200,0
+163,"Sunday, January 12, 2025",Rawida Basher,Ahmed Sa3d,examin.,,400,400,,,,,400,400,,,50%,200,200
+164,"Sunday, January 12, 2025",Mahdy Mohamed,Ms. Sawsan,other,حقنة وريد,50,50,,,,,50,50,,,0%,0,0
+165,"Monday, January 13, 2025",Fatma Ahmed,Sara Mansour,Consult.,متابعه تغذية,150,150,,75,,,75,75,,,50%,75,0
+166,"Monday, January 13, 2025",Mohamed Gaber,Sara Mansour,examin.,,300,300,,150,,,150,150,,,50%,150,0
+167,"Monday, January 13, 2025",Mohamed Gaber,Hany Mouharam,examin.,,160,160,,,,,160,160,نقابة المهندسين,60,50%,80,80
+168,"Monday, January 13, 2025",Hayat Mohamed,Hany Mouharam,examin.,غسيل اذنين,550,550,,,,,550,550,,,50%,275,275
+169,"Monday, January 13, 2025",Maha Ibrahim,Hany Mouharam,Consult.,,100,100,,,,,100,100,,,50%,50,50
+170,"Monday, January 13, 2025",Tarek Shabaan,Hany Mouharam,Consult.,,100,100,,,,,100,100,,,50%,50,50
+171,"Monday, January 13, 2025",Safaa Adam,Mahmoud Al-bosaily,examin.,,200,200,,,,,200,200,,,50%,100,100
+172,"Monday, January 13, 2025",Ahmed Elsayed,Mahmoud Al-bosaily,examin.,,200,200,,,,,200,200,,,50%,100,100
+173,"Monday, January 13, 2025",Salwa Abdelattif,Mahmoud Al-bosaily,examin.,,200,200,,,,,200,200,,,50%,100,100
+174,"Monday, January 13, 2025",Mohamed Hamd,hasan hendam,Consult.,,0,0,,,,,0,0,,,50%,0,0
+175,"Monday, January 13, 2025",Marwa Abdullah,hasan hendam,examin.,U.S,700,700,,160,p.vezeta,380,160,160,,,50%,160,0
+176,"Monday, January 13, 2025",Abdelrahman Mohamed,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,250,150,150,,,50%,75,75
+177,"Monday, January 13, 2025",Moustafa Elsab3y,Bahaa Dwedar,examin.,,400,400,,,,,400,400,,,50%,200,200
+178,"Monday, January 13, 2025",Saeid Abo Els3oud,Yousry Abdelghafar,examin.,,600,600,,240,ekshef,120,240,240,,,50%,240,0
+179,"Monday, January 13, 2025",Eman Fouad,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+180,"Monday, January 13, 2025",Nadra Diab,Yousry Abdelghafar,examin.,زوجة د. محمد السباعي,0,0,,,,,0,0,,,50%,0,0
+181,"Monday, January 13, 2025",Mohamed Ahmed,Gamal Abdelsadik,examin.,,400,400,,,,,400,400,,,50%,200,200
+182,"Monday, January 13, 2025",Tamer Mahmoud,Gamal Abdelsadik,Consult.,,50,50,,,,,50,50,,,50%,25,25
+183,"Monday, January 13, 2025",Marwa Abdullah,Ms. Sawsan,other,اختبار + حقنة,50,50,,,,,50,50,,,0%,0,0
+184,"Monday, January 13, 2025",Mahdy Mohamed,Ms. Sawsan,other,حقنة عضل,20,20,,,,,20,20,,,0%,0,0
+185,"Tuesday, January 14, 2025",Thabet Mahmoud,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,250,150,150,,,50%,75,75
+186,"Tuesday, January 14, 2025",Hasan Mohamed,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+187,"Tuesday, January 14, 2025",Zahra Ali,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+188,"Tuesday, January 14, 2025",Zeinb Ibrahim,Bahaa Dwedar,examin.,اجراء جراحي/ voda cash,1900,100,1800,,,,100,1900,,,50%,950,950
+189,"Tuesday, January 14, 2025",Abo Bakr Atta,Bahaa Dwedar,examin.,,400,400,,,,,400,400,,,50%,200,200
+190,"Tuesday, January 14, 2025",Mohamed Salah,Marwa Abo elwafa,session,جلسة تخاطب,350,350,,175,,,175,175,,,50%,175,0
+191,"Tuesday, January 14, 2025",Mounira Ahmed,Abdelaziz Abo El3ela,examin.,,500,500,,,,,500,500,,,50%,250,250
+192,"Tuesday, January 14, 2025",Reham Tarek,Abdelaziz Abo El3ela,examin.,,500,500,,,,,500,500,,,50%,250,250
+193,"Tuesday, January 14, 2025",Salwa Elahmed,Abdelaziz Abo El3ela,examin.,,500,500,,,clindo,140,360,360,,,50%,180,180
+194,"Tuesday, January 14, 2025",Yousra Moustafa,Abdelaziz Abo El3ela,examin.,,500,500,,,,,500,500,,,50%,250,250
+195,"Tuesday, January 14, 2025",Walaa Omar,Abdelaziz Abo El3ela,examin.,,500,500,,,p.vezeta,350,150,150,,,50%,75,75
+196,"Tuesday, January 14, 2025",Sabah Moustafa,Abdelaziz Abo El3ela,examin.,,500,500,,,p.vezeta,350,150,150,,,50%,75,75
+197,"Tuesday, January 14, 2025",Makka Ahmed,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+198,"Tuesday, January 14, 2025",Mervat Salah,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+199,"Tuesday, January 14, 2025",Mona Gamal,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+200,"Tuesday, January 14, 2025",Amna Fath Ehrahman,Ezzat Sha3lan,Consult.,,300,300,,150,,,150,150,,,50%,150,0
+201,"Tuesday, January 14, 2025",Ahmed Hasan,Ezzat Sha3lan,examin.,,600,600,,300,,,300,300,,,50%,300,0
+202,"Tuesday, January 14, 2025",Yousef Khaled,Ezzat Sha3lan,Consult.,,300,300,,150,,,150,150,,,50%,150,0
+203,"Tuesday, January 14, 2025",Abdelrahman Yousef,Ezzat Sha3lan,Consult.,,300,300,,150,,,150,150,,,50%,150,0
+204,"Tuesday, January 14, 2025",Nada Idrees,Mahmoud Al-bosaily,examin.,,200,200,,,,,200,200,,,50%,100,100
+205,"Tuesday, January 14, 2025",Nada Idrees,Mahmoud Al-bosaily,other,تحت حساب واقي اسنان,1200,1200,,,,,1200,1200,,,50%,600,600
+206,"Tuesday, January 14, 2025",Helal Abdullah,Mahmoud Al-bosaily,examin.,,0,0,,,,,0,0,,,50%,0,0
+207,"Tuesday, January 14, 2025",Sa3dia Abdo,Gamal Abdelsadik,examin.,dressing,600,600,,,,,600,600,,,50%,300,300
+208,"Tuesday, January 14, 2025",Mahdy Mohamed,Ms. Sawsan,other,حقنة عضل,20,20,,,,,20,20,,,0%,0,0
+209,"Wednesday, January 15, 2025",Rasha Abdelrahman,Abdelaziz Abo El3ela,examin.,,500,500,,,p.vezeta,350,150,150,,,50%,75,75
+210,"Wednesday, January 15, 2025",Mohamed Seraj,Abdelaziz Abo El3ela,examin.,,500,500,,,,,500,500,,,50%,250,250
+211,"Wednesday, January 15, 2025",Souzan Mohamed,Waled Mahmoud,examin.,,400,400,,,,,400,400,,,50%,200,200
+212,"Wednesday, January 15, 2025",Gudy Ezzat,mous3ab ismail,examin.,خلع اطفال,550,550,,,,,550,550,,,40%,220,220
+213,"Wednesday, January 15, 2025",Monira Ahmed,Nermin Ibrahim,examin.,جلسة تنظيف بشرة,550,550,,320,,,230,230,,,60%,330,10
+214,"Wednesday, January 15, 2025",Salwa Abdelateif,Mahmoud Al-bosaily,Consult.,علاج عصب + طربوش,2000,2000,,,,,2000,2000,,,50%,1000,1000
+215,"Wednesday, January 15, 2025",Abd Elhannan Ali,Ahmed Temsah,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+216,"Wednesday, January 15, 2025",Yazzen Alaa,Somia Ali,examin.,,400,400,,200,,,200,200,,,50%,200,0
+217,"Wednesday, January 15, 2025",Maha M. Youssef,Yousry Abdelghafar,examin.,,600,0,600,300,,,-300,300,,,50%,300,0
+218,"Wednesday, January 15, 2025",Omar M. Akkef,Yousry Abdelghafar,examin.,,600,0,600,300,,,-300,300,,,50%,300,0
+219,"Wednesday, January 15, 2025",Reham Mohammed,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+220,"Wednesday, January 15, 2025",Naglaa Ahmed,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+221,"Wednesday, January 15, 2025",Ali Naeem,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+222,"Wednesday, January 15, 2025",Saaed Abo Als3od,Yousry Abdelghafar,Consult.,,0,0,,,,,0,0,,,50%,0,0
+223,"Wednesday, January 15, 2025",Abdelrahman Yousesef,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+224,"Wednesday, January 15, 2025",Ahmed Fathy,Badr Ali,examin.,,400,400,,,,,400,400,,,50%,200,200
+225,"Wednesday, January 15, 2025",Loaloa Abdelhaleem,Badr Ali,Consult.,,100,100,,,,,100,100,,,50%,50,50
+226,"Wednesday, January 15, 2025",Tarek Shereef,Bahaa Dwedar,examin.,dressing,600,600,,,,,600,600,,,50%,300,300
+227,"Wednesday, January 15, 2025",Samah Ragab,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,250,150,150,,,50%,75,75
+228,"Wednesday, January 15, 2025",Mahdy Mohamed,Ms. Sawsan,other,حقنة عضل,20,20,,,,,20,20,,,0%,0,0
+229,"Wednesday, January 15, 2025",Ahmed Shady,Ehab Elsaiad,examin.,,500,500,,250,,,250,250,,,50%,250,0
+230,"Thursday, January 16, 2025",Sayed Abdelsalam,Gamal Abdelsadik,examin.,تنظيف قدم سكري,900,900,,,,,900,900,,,50%,450,450
+231,"Thursday, January 16, 2025",Amira Ahmed ,Basma Rabe3,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+232,"Thursday, January 16, 2025",Ahmed Hany ,Bahaa Dwedar,Consult.,محول من عيادة الحدايق,100,100,,,,,100,100,,,50%,50,50
+233,"Thursday, January 16, 2025",Ahmed Madeen,Bahaa Dwedar,examin.,,300,300,,,rodina,,300,300,,,50%,150,150
+234,"Thursday, January 16, 2025",Mohammed Gameil,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+235,"Thursday, January 16, 2025",Hassan Morsal,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+236,"Thursday, January 16, 2025",Rukia Mohammed,azza abdelwarieth,Consult.,,0,0,,,,,0,0,,,50%,0,0
+237,"Saturday, January 18, 2025",Habiba Ehab,Abdelaziz Abo El3ela,examin.,,160,160,,,,,160,160,نقابة المهندسين,60,50%,80,80
+238,"Saturday, January 18, 2025",Laila Mohamed,Abdelaziz Abo El3ela,examin.,,500,500,,,p.vezeta,350,150,150,,,50%,75,75
+239,"Saturday, January 18, 2025",Adham Tawfik,Abdelaziz Abo El3ela,examin.,,500,500,,,p.vezeta,350,150,150,,,50%,75,75
+240,"Saturday, January 18, 2025",Omar Emad Eldin,Abdelaziz Abo El3ela,examin.,,500,500,,,p.vezeta,350,150,150,,,50%,75,75
+241,"Saturday, January 18, 2025",Fatma Abdelmo3ty,Abdelaziz Abo El3ela,examin.,,500,500,,,p.vezeta,350,150,150,,,50%,75,75
+242,"Saturday, January 18, 2025",Hussein Salah ,Ezzat Sha3lan,Consult.,,300,300,,150,,,150,150,,,50%,150,0
+243,"Saturday, January 18, 2025",Heba Saaed,Ezzat Sha3lan,Consult.,,300,300,,150,,,150,150,,,50%,150,0
+244,"Saturday, January 18, 2025",Somaia Samy,Ezzat Sha3lan,examin.,,600,600,,300,,,300,300,,,50%,300,0
+245,"Saturday, January 18, 2025",Nermeen Mohy,Gamal Abdelsadik,examin.,Instapay,400,0,400,,clindo,115,-115,285,,,50%,142.5,142.5
+246,"Saturday, January 18, 2025",Rehab Kamel,Gamal Abdelsadik,examin.,dressing,420,420,,,,,420,420,نقابة المهندسين,,50%,210,210
+247,"Saturday, January 18, 2025",Mohamed Gameil,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+248,"Saturday, January 18, 2025",Adham Ashraf,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,265,135,135,,,50%,67.5,67.5
+249,"Saturday, January 18, 2025",Reham Mohammed,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+250,"Saturday, January 18, 2025",Naglaa Ahmed,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+251,"Saturday, January 18, 2025",Mahmoud Mohammed,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+252,"Saturday, January 18, 2025",Shereef Medhat,Mahmoud Al-bosaily,examin.,تحت حساب حشو عصب,1200,1200,,,,,1200,1200,,,50%,600,600
+253,"Saturday, January 18, 2025",Mohmmed Abdelrazek,Ahmed Temsah,examin.,,500,500,,250,,,250,250,,,50%,250,0
+254,"Saturday, January 18, 2025",Hana Ahmed,hasan hendam,examin.,voda Cash,600,0,600,110,p.vezeta,380,-490,110,,,50%,110,0
+255,"Saturday, January 18, 2025",Mohammed Zakria,hasan hendam,examin.,,600,600,,110,p.vezeta,380,110,110,,,50%,110,0
+256,"Saturday, January 18, 2025",Esraa Ahmed,Badr Ali,examin.,,400,400,,,,,400,400,,,50%,200,200
+257,"Sunday, January 19, 2025",Mounira Ahmed,Nermin Ibrahim,session,skin booster,650,650,,390,,,260,260,,,60%,390,0
+258,"Sunday, January 19, 2025",Nada Edrees,Mahmoud Al-bosaily,Consult.,,0,0,,,,,0,0,,,50%,0,0
+259,"Sunday, January 19, 2025",Salwa Abdelateef,Mahmoud Al-bosaily,Consult.,,0,0,,,,,0,0,,,50%,0,0
+260,"Sunday, January 19, 2025",Manaia Abdelmtalleb,Mona Abdelfatah,examin.,,500,500,,250,,,250,250,,,50%,250,0
+261,"Sunday, January 19, 2025",Hager Arfa,Mona Abdelfatah,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+262,"Sunday, January 19, 2025",Mustafa Alseba3y,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+263,"Sunday, January 19, 2025",Aya Nagah ,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+264,"Sunday, January 19, 2025",Ahmed Hany,Bahaa Dwedar,Consult.,,100,100,,,,,100,100,,,50%,50,50
+265,"Sunday, January 19, 2025",Atef Shaaban,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,265,135,135,,,50%,67.5,67.5
+266,"Sunday, January 19, 2025",Zidan Atef,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,265,135,135,,,50%,67.5,67.5
+267,"Sunday, January 19, 2025",Mohamed Salah,Marwa Abo elwafa,session,جلسة تخاطب,350,350,,175,,,175,175,,,50%,175,0
+268,"Sunday, January 19, 2025",Hager Arfa,Basma Rabe3,examin.,,400,400,,200,,,200,200,,,50%,200,0
+269,"Sunday, January 19, 2025",Nehal Allam,azza abdelwarieth,examin.,سونار حمل,240,240,,150,,,90,90,نقابة المهندسين,60,50%,120,-30
+270,"Sunday, January 19, 2025",Amany Mohsen,azza abdelwarieth,Consult.,سونار حمل,130,130,,65,,,65,65,نقابة المهندسين,,50%,65,0
+271,"Sunday, January 19, 2025",Rahma Mohamed,Gamal Abdelsadik,examin.,,400,400,,,,,400,400,,,50%,200,200
+272,"Sunday, January 19, 2025",Nermeen Roushdy,Ms. Sawsan,other,اختبار + حقنة,50,50,,,,,50,50,,,0%,0,0
+273,"Monday, January 20, 2025",Fatma Ahmed,Sara Mansour,Consult.,متابعه تغذية,150,150,,75,,,75,75,,,50%,75,0
+274,"Monday, January 20, 2025",Manal Yousry,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+275,"Monday, January 20, 2025",Dalia Ebraheim,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+276,"Monday, January 20, 2025",Hams Mohamed,Yousry Abdelghafar,examin.,,600,600,,240,ekshef,120,240,240,,,50%,240,0
+277,"Monday, January 20, 2025",Lina Ali,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,265,135,135,,,50%,67.5,67.5
+278,"Monday, January 20, 2025",Mohamed Esmaeil,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+279,"Monday, January 20, 2025",Kamel Mohamed,Gamal Abdelsadik,examin.,,220,220,,,,,220,220,نقابة المهندسين,,50%,110,110
+280,"Monday, January 20, 2025",Kamel Mohamed,Ms. Sawsan,other,اختبار + حقنة,50,50,,,,,50,50,,,0%,0,0
+281,"Monday, January 20, 2025",Shereef Medhat,Mahmoud Al-bosaily,Consult.,متابعة حشو عصب,2000,2000,,,,,2000,2000,,,50%,1000,1000
+282,"Monday, January 20, 2025",Samira Ali,Mahmoud Al-bosaily,examin.,,200,200,,,,,200,200,,,50%,100,100
+283,"Monday, January 20, 2025",Hussein Attia,Mahmoud Al-bosaily,examin.,,120,120,,,,,120,120,نقابة المهندسين,,50%,60,60
+284,"Monday, January 20, 2025",A/ Helal,Mahmoud Al-bosaily,Consult.,,0,0,,,,,0,0,,,50%,0,0
+285,"Monday, January 20, 2025",Samira Ali,Hany Mouharam,Consult.,غسيل اذن واحده,200,200,,,,,200,200,,,50%,100,100
+286,"Monday, January 20, 2025",Hussein Attia,Hany Mouharam,examin.,غسيل اذن واحده,320,320,,,,,320,320,نقابة المهندسين,,50%,160,160
+287,"Monday, January 20, 2025",Rehab Kamel,Hany Mouharam,examin.,,220,220,,,,,220,220,نقابة المهندسين,,50%,110,110
+288,"Tuesday, January 21, 2025",Omar Moukhtar,Abdelaziz Abo El3ela,examin.,,500,500,,,p.vezeta,350,150,150,,,50%,75,75
+289,"Tuesday, January 21, 2025",Lamiaa Khaled,Abdelaziz Abo El3ela,examin.,,500,500,,,p.vezeta,350,150,150,,,50%,75,75
+290,"Tuesday, January 21, 2025",Marwan Emad,Abdelaziz Abo El3ela,examin.,voda Cash,500,0,500,,p.vezeta,350,-350,150,,,50%,75,75
+291,"Tuesday, January 21, 2025",Malak Abdelman3em,Abdelaziz Abo El3ela,examin.,,500,500,,,clindo,140,360,360,,,50%,180,180
+292,"Tuesday, January 21, 2025",Ashraf Mohamed,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+293,"Tuesday, January 21, 2025",Abdelrahman Mahmoud,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+294,"Tuesday, January 21, 2025",Hader Ahmed,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+295,"Tuesday, January 21, 2025",Azza Mohamed,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+296,"Tuesday, January 21, 2025",Na3ema Abdelmawla,Bahaa Dwedar,examin.,,400,400,,,,,400,400,,,50%,200,200
+297,"Tuesday, January 21, 2025",Radia Mohamed,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,265,135,135,,,50%,67.5,67.5
+298,"Tuesday, January 21, 2025",Radia Mohamed,Bahaa Dwedar,other,فتح خراج تحت مخدر,1000,1000,,,,,1000,1000,,,50%,500,500
+299,"Tuesday, January 21, 2025",Gamalat Emam,Ezzat Sha3lan,examin.,,600,600,,300,,,300,300,,,50%,300,0
+300,"Tuesday, January 21, 2025",Sharbat Saad,Ezzat Sha3lan,examin.,,600,600,,300,,,300,300,,,50%,300,0
+301,"Tuesday, January 21, 2025",Abdelmaseh Wageh,Ezzat Sha3lan,examin.,online/ voda cash,600,0,600,300,,,-300,300,,,50%,300,0
+302,"Tuesday, January 21, 2025",Ma3za Ahmed,Ezzat Sha3lan,examin.,,600,600,,300,,,300,300,,,50%,300,0
+303,"Tuesday, January 21, 2025",Leqaa Ahmed,Ezzat Sha3lan,Consult.,,300,300,,150,,,150,150,,,50%,150,0
+304,"Tuesday, January 21, 2025",Rowida Basher,Ahmed Sa3d,Consult.,,100,100,,,,,100,100,,,50%,50,50
+305,"Tuesday, January 21, 2025",Sherif Medhat,Mahmoud Al-bosaily,Consult.,,0,0,,,,,0,0,,,50%,0,0
+306,"Tuesday, January 21, 2025",Ahmed Shady,Ehab Elsaiad,Consult.,,100,100,,,,,100,100,,,50%,50,50
+307,"Tuesday, January 21, 2025",Reem Salah,Ehab Elsaiad,Consult.,مستلزمات غيار/instapay,100,0,100,,,,0,100,,,50%,50,50
+308,"Tuesday, January 21, 2025",Haroun Ahmed,Hanan Zaghlol,examin.,,400,400,,140,clindo,115,145,145,,,50%,142.5,2.5
+309,"Wednesday, January 22, 2025",Sultan Mubarak,Abdelaziz Abo El3ela,examin.,,500,500,,,p.vezeta,350,150,150,,,50%,75,75
+310,"Wednesday, January 22, 2025",Yousra Mustafa,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+311,"Wednesday, January 22, 2025",Seham Fares ,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+312,"Wednesday, January 22, 2025",Ayan Mohamed,Hany Mouharam,examin.,حشو اذن واحدة,475,475,,,,,475,475,,,50%,237.5,237.5
+313,"Wednesday, January 22, 2025",Mervat Mahrous,Hany Mouharam,examin.,,400,400,,,,,400,400,,,50%,200,200
+314,"Wednesday, January 22, 2025",Salma Abdelgalil,Hany Mouharam,examin.,,400,400,,,ekshef,80,320,320,,,50%,160,160
+315,"Wednesday, January 22, 2025",fawzy Abdelaziz,Ahmed Sa3d,examin.,,400,400,,,,,400,400,,,50%,200,200
+316,"Wednesday, January 22, 2025",Gudy Ezzat,mous3ab ismail,Consult.,حشو عادي للاسنان,1400,1400,,,,,1400,1400,,,40%,560,560
+317,"Wednesday, January 22, 2025",Fady Nabeil,mous3ab ismail,Consult.,,0,0,,,,,0,0,,,40%,0,0
+318,"Wednesday, January 22, 2025",Gamal Ahmed,mous3ab ismail,Consult.,حشو عادي طرف/ د. مصعب,400,400,,,,,400,400,,,40%,160,160
+319,"Wednesday, January 22, 2025",A/Esmaaeil,mous3ab ismail,examin.,والد د. مصعب,0,0,,,,,0,0,,,40%,0,0
+320,"Wednesday, January 22, 2025",Dalia Ebraheim,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+321,"Wednesday, January 22, 2025",Rasha Shaaban,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+322,"Wednesday, January 22, 2025",Tamer Azzam,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+323,"Wednesday, January 22, 2025",Alaa Ebraheim,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+324,"Wednesday, January 22, 2025",Mohamed Saaed,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+325,"Wednesday, January 22, 2025",Osama Mahmoud ,Gamal Abdelsadik,Consult.,استئصال اصبع قدم,1000,1000,,,,,1000,1000,,,50%,500,500
+326,"Wednesday, January 22, 2025",Noha Ramadan ,Gamal Abdelsadik,examin.,,400,400,,,,,400,400,,,50%,200,200
+327,"Wednesday, January 22, 2025",Altayeb Abdelkader,Gamal Abdelsadik,examin.,,400,400,,,,,400,400,,,50%,200,200
+328,"Wednesday, January 22, 2025",Sahar Mohamed,Ehab Elsaiad,examin.,نسبة المركز فقط,250,250,,,,,250,250,,,50%,125,125
+329,"Wednesday, January 22, 2025",Nourhan Ahmed,Ehab Elsaiad,examin.,instapay/dressing,320,100,220,110,,,-10,210,نقابة المهندسين,,50%,160,50
+330,"Wednesday, January 22, 2025",Ahmed Sulaiman,Bahaa Dwedar,examin.,,220,220,,,,,220,220,نقابة المهندسين,,50%,110,110
+331,"Wednesday, January 22, 2025",Atef Shaaban,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+332,"Wednesday, January 22, 2025",Maka Reda,Badr Ali,examin.,,400,400,,,,,400,400,,,50%,200,200
+333,"Wednesday, January 22, 2025",Ola Saaed,Basma Rabe3,examin.,,400,400,,160,ekshef,80,160,160,,,50%,160,0
+334,"Thursday, January 23, 2025",Eman Mohamed,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,265,135,135,,,50%,67.5,67.5
+335,"Thursday, January 23, 2025",Eman Mohamed,Bahaa Dwedar,other,dressing,600,600,,,,,600,600,,,50%,300,300
+336,"Thursday, January 23, 2025",Mohamed Saeid,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+337,"Thursday, January 23, 2025",Sara Emad,Bahaa Dwedar,examin.,,150,150,,,,,150,150,نقابة الاطباء,,50%,75,75
+338,"Thursday, January 23, 2025",Marwa Abdullah,hasan hendam,Consult.,,0,0,,,,,0,0,,,50%,0,0
+339,"Thursday, January 23, 2025",Elham Mohamed,hasan hendam,examin.,سونار بطن,230,230,,170,,,60,60,نقابة المهندسين,110,50%,115,-55
+340,"Thursday, January 23, 2025",May Hamdy,hasan hendam,examin.,,400,400,,160,ekshef,80,160,160,,,50%,160,0
+341,"Thursday, January 23, 2025",Shehab Saeid,Gamal Abdelsadik,examin.,,400,400,,,clindo,115,285,285,,,50%,142.5,142.5
+342,"Thursday, January 23, 2025",Soher Abdelhamid,Gamal Abdelsadik,examin.,dressing,240,240,,,,,240,240,نقابة الاطباء,,50%,120,120
+343,"Thursday, January 23, 2025",Mohamed Osama,Gamal Abdelsadik,examin.,,150,150,,,,,150,150,نقابة الاطباء,,50%,75,75
+344,"Thursday, January 23, 2025",Mervat Mahrous,Hany Mouharam,Consult.,,0,0,,,,,0,0,,,50%,0,0
+345,"Thursday, January 23, 2025",Baballah Bakhet,Hany Mouharam,examin.,,400,400,,,,,400,400,,,50%,200,200
+346,"Thursday, January 23, 2025",Esraa Mohamed,Hany Mouharam,examin.,,400,400,,,,,400,400,,,50%,200,200
+347,"Thursday, January 23, 2025",Helal Abdullah,Mahmoud Al-bosaily,Consult.,,0,0,,,,,0,0,,,50%,0,0
+348,"Saturday, January 25, 2025",Eman Ibrahim,Abdelaziz Abo El3ela,examin.,,500,500,,,p.vezeta,350,150,150,,,50%,75,75
+349,"Saturday, January 25, 2025",Omnia Abo Elfatah,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+350,"Saturday, January 25, 2025",Nariman Maged,Abdelaziz Abo El3ela,examin.,,500,500,,,,,500,500,,,50%,250,250
+351,"Saturday, January 25, 2025",Elawdam Elmohand,Abdelaziz Abo El3ela,examin.,,500,500,,,p.vezeta,350,150,150,,,50%,75,75
+352,"Saturday, January 25, 2025",Eman Taleb,Abdelaziz Abo El3ela,examin.,,500,500,,,p.vezeta,350,150,150,,,50%,75,75
+353,"Saturday, January 25, 2025",Saleh Amr,Bahaa Dwedar,examin.,instapay,400,0,400,,p.vezeta,265,-265,135,,,50%,67.5,67.5
+354,"Saturday, January 25, 2025",Saleh Amr,Bahaa Dwedar,other,اجراء جراحي/ instapay,500,0,500,,,,0,500,,,50%,250,250
+355,"Saturday, January 25, 2025",Mohamed Abdelmen3em,Bahaa Dwedar,examin.,,220,220,,,,,220,220,نقابة المهندسين,,50%,110,110
+356,"Saturday, January 25, 2025",Zeinb Ibrahim,Bahaa Dwedar,Consult.,dressing,250,250,,,,,250,250,,,50%,125,125
+357,"Saturday, January 25, 2025",Radia Mohammed,Bahaa Dwedar,Consult.,dressing,250,250,,,,,250,250,,,50%,125,125
+358,"Saturday, January 25, 2025",Samar 2okeilly,Gamal Abdelsadik,examin.,ازالة كيس دهني بالرأس,1000,1000,,,,,1000,1000,,,50%,500,500
+359,"Saturday, January 25, 2025",Ons Halwy,Gamal Abdelsadik,examin.,,400,400,,,,,400,400,,,50%,200,200
+360,"Saturday, January 25, 2025",Laila Abdelrahman,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+361,"Saturday, January 25, 2025",Hela Mahmoud,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+362,"Saturday, January 25, 2025",Rasha Shaban,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+363,"Saturday, January 25, 2025",Ali Na3em,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+364,"Saturday, January 25, 2025",Reem Salem,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+365,"Saturday, January 25, 2025",Yousra Mustafa,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+366,"Saturday, January 25, 2025",Sagda Mohamed,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+367,"Saturday, January 25, 2025",Hams Mohamed,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+368,"Saturday, January 25, 2025",Nour Abdelhameid,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+369,"Saturday, January 25, 2025",Mayar Ahmed,Hany Mouharam,examin.,,400,400,,50,,,350,350,,,50%,200,150
+370,"Saturday, January 25, 2025",Ebraheim Alafghany,Ahmed Temsah,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+371,"Saturday, January 25, 2025",Nourhan Ahmed,Ehab Elsaiad,Consult.,,100,100,,,,,100,100,,,50%,50,50
+372,"Saturday, January 25, 2025",Sahar Mohamed,Ehab Elsaiad,Consult.,,0,0,,,,,0,0,,,50%,0,0
+373,"Sunday, January 26, 2025",Belal Rizk,Gamal Abdelsadik,examin.,,400,400,,,,,400,400,,,50%,200,200
+374,"Sunday, January 26, 2025", Eman Ahmed ,Gamal Abdelsadik,examin.,,400,400,,,,,400,400,,,50%,200,200
+375,"Sunday, January 26, 2025",Thabet Mahmoud,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+376,"Sunday, January 26, 2025",Samah Ragab,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+377,"Sunday, January 26, 2025",Mona Amir,Mahmoud Al-bosaily,examin.,,200,200,,,,,200,200,,,50%,100,100
+378,"Monday, January 27, 2025",Alaa Sayed,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+379,"Monday, January 27, 2025",Nour Abdelhamid,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+380,"Monday, January 27, 2025",Amany Kamel,Yousry Abdelghafar,examin.,,600,600,,175,p.vezeta,245,180,180,,,50%,177.5,2.5
+381,"Monday, January 27, 2025",Mohamed Saeid,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+382,"Monday, January 27, 2025",Wafaa Saleh,Yousry Abdelghafar,examin.,Instapay,600,0,600,300,,,-300,300,,,50%,300,0
+383,"Monday, January 27, 2025",Abdelrahman Moustafa,Yousry Abdelghafar,examin.,instapay,600,0,600,300,,,-300,300,,,50%,300,0
+384,"Monday, January 27, 2025",Hela Mahmoud,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+385,"Monday, January 27, 2025",Mohamed Yahia,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+386,"Monday, January 27, 2025",Abdelbaset Mahmoud,Ahmed Temsah,examin.,,500,500,,250,,,250,250,,,50%,250,0
+387,"Monday, January 27, 2025",Mohamed Ameen,Ahmed Temsah,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+388,"Monday, January 27, 2025",Hesham Ahmed,Bahaa Dwedar,examin.,,400,400,,,,,400,400,,,50%,200,200
+389,"Monday, January 27, 2025",Walaa Mohamed,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,265,135,135,,,50%,67.5,67.5
+390,"Monday, January 27, 2025",Abobakr Atta,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+391,"Monday, January 27, 2025",Hossam Tamer,Ahmed Sa3d,examin.,,400,400,,,,,400,400,,,50%,200,200
+392,"Monday, January 27, 2025",Helal Abdullah,Mahmoud Al-bosaily,Consult.,,0,0,,,,,0,0,,,50%,0,0
+393,"Tuesday, January 28, 2025",Fatma Tantawy,Abdelaziz Abo El3ela,examin.,,500,500,,,p.vezeta,350,150,150,,,50%,75,75
+394,"Tuesday, January 28, 2025",Mansour Elmalk,Abdelaziz Abo El3ela,examin.,,500,500,,,p.vezeta,350,150,150,,,50%,75,75
+395,"Tuesday, January 28, 2025",Hasnaa Zaki,Abdelaziz Abo El3ela,examin.,,500,500,,,p.vezeta,350,150,150,,,50%,75,75
+396,"Tuesday, January 28, 2025",Omar Emad eldin,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+397,"Tuesday, January 28, 2025",Eman Taleb,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+398,"Tuesday, January 28, 2025",Mohamed Khalaf,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+399,"Tuesday, January 28, 2025",Mervat Moustafa,Abdelaziz Abo El3ela,examin.,,500,500,,,,,500,500,,,50%,250,250
+400,"Tuesday, January 28, 2025",Lamiaa Khaled,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+401,"Tuesday, January 28, 2025",Malak Abdelmen3em,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+402,"Tuesday, January 28, 2025",Mervat Mahrous,Hany Mouharam,Consult.,,0,0,,,,,0,0,,,50%,0,0
+403,"Tuesday, January 28, 2025",Hanan Abdullah,hasan hendam,examin.,,400,400,,200,,,200,200,,,50%,200,0
+404,"Tuesday, January 28, 2025",Osama Mahmoud,Gamal Abdelsadik,other,dressing,300,300,,,,,300,300,,,50%,150,150
+405,"Tuesday, January 28, 2025",Salma Mamdouh,Gamal Abdelsadik,Consult.,,240,240,,,,,240,240,نقابة التجاريين,,50%,120,120
+406,"Tuesday, January 28, 2025",Omnia Wagdy,Ezzat Sha3lan,examin.,instapay,600,600,,300,,,300,300,,,50%,300,0
+407,"Tuesday, January 28, 2025",Amina Ahmed,Ezzat Sha3lan,examin.,,600,600,,300,,,300,300,,,50%,300,0
+408,"Tuesday, January 28, 2025",Basma Mohamed,Ezzat Sha3lan,examin.,,600,600,,300,,,300,300,,,50%,300,0
+409,"Tuesday, January 28, 2025",Mahgoub Othman,Ezzat Sha3lan,examin.,,600,600,,300,,,300,300,,,50%,300,0
+410,"Tuesday, January 28, 2025",Nada Ahmed,Ezzat Sha3lan,examin.,,600,600,,300,,,300,300,,,50%,300,0
+411,"Tuesday, January 28, 2025",Hossam Ahmed,Ezzat Sha3lan,examin.,,600,600,,215,clindo,170,215,215,,,50%,215,0
+412,"Tuesday, January 28, 2025",Athar Khalil,azza abdelwarieth,examin.,,400,400,,200,,,200,200,,,50%,200,0
+413,"Tuesday, January 28, 2025",Hasan Mersal,Mahmoud Al-bosaily,examin.,,200,200,,,,,200,200,,,50%,100,100
+414,"Tuesday, January 28, 2025",Randa Ramadan,Ms. Sawsan,other,تعليق محلول حديد,400,400,,,,,400,400,,,0%,0,0
+415,"Tuesday, January 28, 2025",Fatma Tantawy,Ms. Sawsan,other,حقنة عضل,20,20,,,,,20,20,,,0%,0,0
+416,"Wednesday, January 29, 2025",Fatma Tarek,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,265,135,135,,,50%,67.5,67.5
+417,"Wednesday, January 29, 2025",Fatma Tarek,Bahaa Dwedar,other,فتح خراج صغير تحت مخدر,400,400,,,,,400,400,,,50%,200,200
+418,"Wednesday, January 29, 2025",Fawzy Abdelaziz,Ahmed Sa3d,Consult.,,100,100,,,,,100,100,,,50%,50,50
+419,"Wednesday, January 29, 2025",Maryem Maher,Waled Mahmoud,examin.,,400,400,,,,,400,400,,,50%,200,200
+420,"Wednesday, January 29, 2025",Azzam Mohammed,Hany Mouharam,examin.,استخراج جسم غريب من الانف,550,550,,,,,550,550,,,50%,275,275
+421,"Wednesday, January 29, 2025",Medhat Kamal,Basma Rabe3,examin.,,400,400,,160,ekshef,80,160,160,,,50%,160,0
+422,"Wednesday, January 29, 2025",Yasmin Magdy,Basma Rabe3,examin.,,400,400,,160,ekshef,80,160,160,,,50%,160,0
+423,"Wednesday, January 29, 2025",Ahmed Fawaz,Gamal Abdelsadik,examin.,,400,400,,,clindo,115,285,285,,,50%,142.5,142.5
+424,"Wednesday, January 29, 2025",Samy Abdelfatah,Gamal Abdelsadik,examin.,,400,400,,,,,400,400,,,50%,200,200
+425,"Wednesday, January 29, 2025",Zidan Ibrahim,Gamal Abdelsadik,examin.,,400,400,,,,,400,400,,,50%,200,200
+426,"Wednesday, January 29, 2025",Marwa Mohamed,Gamal Abdelsadik,examin.,,400,400,,,,,400,400,,,50%,200,200
+427,"Wednesday, January 29, 2025",Alsayeda Alabeed,Yousry Abdelghafar,examin.,,600,600,,240,ekshef,120,240,240,,,50%,240,0
+428,"Wednesday, January 29, 2025",Kaha Soltan,Yousry Abdelghafar,examin.,,600,600,,215,clindo,170,215,215,,,50%,215,0
+429,"Wednesday, January 29, 2025",Aliaa Moustafa,Yousry Abdelghafar,examin.,instapay,600,0,600,300,,,-300,300,,,50%,300,0
+430,"Wednesday, January 29, 2025",Abdelrahman Moustafa,Yousry Abdelghafar,Consult.,instapay,100,100,,50,,,50,50,,,50%,50,0
+431,"Wednesday, January 29, 2025",Wafaa Saleh,Yousry Abdelghafar,Consult.,instapay,100,100,,50,,,50,50,,,50%,50,0
+432,"Wednesday, January 29, 2025",Helal Abdullah,Mahmoud Al-bosaily,Consult.,,0,0,,,,,0,0,,,50%,0,0
+433,"Thursday, January 30, 2025",Ezz Babbawy,Basma Rabe3,examin.,,400,400,,200,,,200,200,,,50%,200,0
+434,"Thursday, January 30, 2025",Abdelrahman Attia,hasan hendam,examin.,,600,600,,110,p.vezeta,380,110,110,,,50%,110,0
+435,"Thursday, January 30, 2025",Younes Mohammed,Gamal Abdelsadik,examin.,فتح خراج صغير تحت مخدر,470,470,,,,,470,470,نقابة المهندسين,,50%,235,235
+436,"Thursday, January 30, 2025",Abdelrahman Ali,Mona Abdelfatah,examin.,voda Cash,500,0,500,250,,,-250,250,,,50%,250,0
+437,"Thursday, January 30, 2025",Ahmed Khalf,Ahmed Sa3d,examin.,,400,400,,,,,400,400,,,50%,200,200
+438,"Saturday, February 1, 2025",Mahdy Ahmed,Abdelaziz Abo El3ela,examin.,,500,500,,,clindo,140,360,360,,,50%,180,180
+439,"Saturday, February 1, 2025",Hadeel Hussein,Abdelaziz Abo El3ela,examin.,,500,500,,,p.vezeta,350,150,150,,,50%,75,75
+440,"Saturday, February 1, 2025",Seham Mohammed,Abdelaziz Abo El3ela,examin.,,500,500,,,p.vezeta,350,150,150,,,50%,75,75
+441,"Saturday, February 1, 2025",Haytham Bahaa,Abdelaziz Abo El3ela,examin.,,500,500,,,,,500,500,,,50%,250,250
+442,"Saturday, February 1, 2025",Habiba Ehab,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+443,"Saturday, February 1, 2025",Youssef Essam,Abdelaziz Abo El3ela,examin.,,500,500,,,,,500,500,,,50%,250,250
+444,"Saturday, February 1, 2025",So3ad Saleh,Gamal Abdelsadik,examin.,,400,400,,,,,400,400,,,50%,200,200
+445,"Saturday, February 1, 2025",Sahar Kamal,Gamal Abdelsadik,examin.,,400,400,,,,,400,400,,,50%,200,200
+446,"Saturday, February 1, 2025",Huda Fathy,Gamal Abdelsadik,Consult.,dressing,200,200,,,,,200,200,,,50%,100,100
+447,"Saturday, February 1, 2025",Kamel Mohamed,Gamal Abdelsadik,Consult.,,100,100,,,,,100,100,,,50%,50,50
+448,"Saturday, February 1, 2025",Rehab Kamel,Gamal Abdelsadik,Consult.,dressing/ voda cash,200,0,200,,,,0,200,,,50%,100,100
+449,"Saturday, February 1, 2025",Ebrahim Ali,Hany Mouharam,examin.,,400,400,,,,,400,400,,,50%,200,200
+450,"Saturday, February 1, 2025",Babahllah Bakhet,Hany Mouharam,Consult.,,100,100,,,,,100,100,,,50%,50,50
+451,"Saturday, February 1, 2025",Joudy Ezzat,mous3ab ismail,Consult.,حشو عادي للاسنان,1400,1400,,,,,1400,1400,,,40%,560,560
+452,"Saturday, February 1, 2025",Emad Salah,mous3ab ismail,examin.,,200,200,,,,,200,200,,,40%,80,80
+453,"Saturday, February 1, 2025",Yara Hassan,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+454,"Saturday, February 1, 2025",Moustafa Abdelaziz,Yousry Abdelghafar,Consult.,,300,300,,300,,,0,0,,,50%,150,-150
+455,"Saturday, February 1, 2025",Ayman Zaki,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+456,"Saturday, February 1, 2025",Kaha Soltan,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+457,"Saturday, February 1, 2025",Tamer Azzam,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+458,"Saturday, February 1, 2025",Abdelrahman Yousef,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+459,"Saturday, February 1, 2025",Aliaa Moustafa,Yousry Abdelghafar,Consult.,instapay,100,0,100,50,,,-50,50,,,50%,50,0
+460,"Saturday, February 1, 2025",Sanaa Ali,Ezzat Sha3lan,examin.,,600,600,,300,,,300,300,,,50%,300,0
+461,"Saturday, February 1, 2025",Ali Fawzy,Ezzat Sha3lan,Consult.,,300,300,,150,,,150,150,,,50%,150,0
+462,"Saturday, February 1, 2025",Ma3za Ahmed,Ezzat Sha3lan,Consult.,,300,300,,150,,,150,150,,,50%,150,0
+463,"Saturday, February 1, 2025",Heba Saeid,Ezzat Sha3lan,examin.,voda Cash,600,0,600,300,,,-300,300,,,50%,300,0
+464,"Saturday, February 1, 2025",Zaiad Yaser,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,250,150,150,,,50%,75,75
+465,"Saturday, February 1, 2025",Babahllah Bakhet,Bahaa Dwedar,examin.,,400,400,,,,,400,400,,,50%,200,200
+466,"Saturday, February 1, 2025",Waled Soliman,Bahaa Dwedar,examin.,,400,400,,,,,400,400,,,50%,200,200
+467,"Saturday, February 1, 2025",Waled Soliman,Bahaa Dwedar,other,ظفر غائر + ازالة فطريات,1000,1000,,,,,1000,1000,,,50%,500,500
+468,"Saturday, February 1, 2025",Abdelbaset Mahmoud,Ahmed Temsah,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+469,"Saturday, February 1, 2025",Mohamed Emad,Ahmed Temsah,examin.,,500,500,,250,,,250,250,,,50%,250,0
+470,"Saturday, February 1, 2025",Ahmed Mahmoud,Ahmed Temsah,examin.,,500,500,,200,ekshef,100,200,200,,,50%,200,0
+471,"Saturday, February 1, 2025",Yassmin 3amer,Ahmed Mansour,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+472,"Saturday, February 1, 2025",Sawsan Elsafie3,Mahmoud Abdeen,examin.,,400,400,,160,ekshef,80,160,160,,,50%,160,0
+473,"Saturday, February 1, 2025",Omima Ibrahim,Moustafa Elhefnawy,session,,0,0,,,,,0,0,,,50%,0,0
+474,"Saturday, February 1, 2025",Afaf,Moustafa Elhefnawy,session,,0,0,,,,,0,0,,,50%,0,0
+475,"Saturday, February 1, 2025",Malek Mohamed,Moustafa Elhefnawy,session,,0,0,,,,,0,0,,,50%,0,0
+476,"Saturday, February 1, 2025",Shimaa Mohamed,Mahmoud Al-bosaily,examin.,تحت حساب حشو,1000,1000,,,,,1000,1000,,,50%,500,500
+477,"Saturday, February 1, 2025",Kamel Mohamed,Ms. Sawsan,other,اختبار + حقنة,50,50,,,,,50,50,,,0%,0,0
+478,"Sunday, February 2, 2025",Abdelfattah A ElHakeim,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,250,150,150,,,50%,75,75
+479,"Sunday, February 2, 2025",Abdelfattah A ElHakeim,Bahaa Dwedar,other,dressing,500,500,,,,,500,500,,,50%,250,250
+480,"Sunday, February 2, 2025",Ebraheim  M Shabib,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,250,150,150,,,50%,75,75
+481,"Sunday, February 2, 2025",Mohamed Mahmoud,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,250,150,150,,,50%,75,75
+482,"Sunday, February 2, 2025",Hesham Ahmed,Bahaa Dwedar,Consult.,voda Cash,50,0,50,,,,0,50,,,50%,25,25
+483,"Sunday, February 2, 2025",Talia Ahmed,Bahaa Dwedar,examin.,,400,400,,,,,400,400,,,50%,200,200
+484,"Sunday, February 2, 2025",Ahmed M. Soliman,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+485,"Sunday, February 2, 2025",Mervat Mahrous,Hany Mouharam,Consult.,,100,100,,,,,100,100,,,50%,50,50
+486,"Sunday, February 2, 2025",So3ad Saleh,Gamal Abdelsadik,Consult.,,100,100,,,,,100,100,,,50%,50,50
+487,"Sunday, February 2, 2025",Tamer Mahmoud,Gamal Abdelsadik,examin.,dressing,600,600,,,,,600,600,,,50%,300,300
+488,"Sunday, February 2, 2025",Arej Moustafa,Basma Rabe3,examin.,,400,400,,160,ekshef,80,160,160,,,50%,160,0
+489,"Sunday, February 2, 2025",Esraa Magdy,azza abdelwarieth,examin.,,400,400,,160,ekshef,80,160,160,,,50%,160,0
+490,"Sunday, February 2, 2025",Ahmed Elsayed,Mahmoud Al-bosaily,Consult.,,0,0,,,,,0,0,,,50%,0,0
+491,"Sunday, February 2, 2025",So3ad Saleh,Ms. Sawsan,other,ECG,200,200,,,,,200,200,,,0%,0,0
+492,"Sunday, February 2, 2025",Samar 3oqaily,Ms. Sawsan,other,فك غرز,100,100,,,,,100,100,,,0%,0,0
+493,"Sunday, February 2, 2025",Mervat Mahrous,Ms. Sawsan,other,حقنة عضل,20,20,,,,,20,20,,,0%,0,0
+494,"Monday, February 3, 2025",Salma Soliman,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+495,"Monday, February 3, 2025",Yara Hassan,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+496,"Monday, February 3, 2025",Alaa Ibrahim,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+497,"Monday, February 3, 2025",Bahaa Sobhy,hasan hendam,examin.,,600,600,,110,p.vezeta,380,110,110,,,50%,110,0
+498,"Monday, February 3, 2025",Mai Hamdy,hasan hendam,Consult.,,0,0,,,,,0,0,,,50%,0,0
+499,"Monday, February 3, 2025",Ahmed Hossam,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,250,150,150,,,50%,75,75
+500,"Monday, February 3, 2025",Eman M. Refaat,Bahaa Dwedar,Consult.,,50,50,,,,,50,50,,,50%,25,25
+501,"Monday, February 3, 2025",Ahmed Alaa,Bahaa Dwedar,examin.,,400,400,,,,,400,400,,,50%,200,200
+502,"Monday, February 3, 2025",Shimaa Emad,Bahaa Dwedar,examin.,,400,400,,,,,400,400,,,50%,200,200
+503,"Monday, February 3, 2025",Makka Ramadan,Bahaa Dwedar,examin.,dressing,650,650,,,,,650,650,,,50%,325,325
+504,"Monday, February 3, 2025",Shimaa M. Qadry,Mahmoud Al-bosaily,Consult.,,0,0,,,,,0,0,,,50%,0,0
+505,"Monday, February 3, 2025",Mohamed Emad,Ahmed Temsah,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+506,"Monday, February 3, 2025",Farida Elnahrawy,Moustafa Elhefnawy,session,,400,400,,,,,400,400,,,50%,200,200
+507,"Monday, February 3, 2025",Omima Ibrahim,Moustafa Elhefnawy,session,,0,0,,,,,0,0,,,50%,0,0
+508,"Tuesday, February 4, 2025",Mohammed Salah,Marwa Abo elwafa,session,جلسة تخاطب,350,350,,175,,,175,175,,,50%,175,0
+509,"Tuesday, February 4, 2025",Mohamed Abdelwa7ed,Abdelaziz Abo El3ela,examin.,,600,600,,,p.vezeta,350,250,250,,,50%,125,125
+510,"Tuesday, February 4, 2025",Nefeisa Sayed,Abdelaziz Abo El3ela,examin.,,600,600,,,p.vezeta,350,250,250,,,50%,125,125
+511,"Tuesday, February 4, 2025",Ghofran Daahan,Abdelaziz Abo El3ela,examin.,,500,500,,,clindo,140,360,360,,,50%,180,180
+512,"Tuesday, February 4, 2025",Rana Dahy,Abdelaziz Abo El3ela,examin.,,500,500,,,clindo,140,360,360,,,50%,180,180
+513,"Tuesday, February 4, 2025",Faten Abd Rabo,Abdelaziz Abo El3ela,examin.,,500,500,,,clindo,140,360,360,,,50%,180,180
+514,"Tuesday, February 4, 2025",Adel Aziz,Abdelaziz Abo El3ela,examin.,شامل,360,0,360,,p.vezeta,,0,360,,,50%,180,180
+515,"Tuesday, February 4, 2025",Haythem Bahaa,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+516,"Tuesday, February 4, 2025",Ghaidaa Osama,Waled Qadah,examin.,,400,400,,160,ekshef,80,160,160,,,50%,160,0
+517,"Tuesday, February 4, 2025",Ghaidaa Osama,Waled Qadah,other,,500,0,500,300,,,-300,200,,,50%,250,-50
+518,"Tuesday, February 4, 2025",Amr Ahmed,Ezzat Sha3lan,examin.,,600,600,,300,,,300,300,,,50%,300,0
+519,"Tuesday, February 4, 2025",Eman Mousa ,Ezzat Sha3lan,examin.,,600,600,,300,,,300,300,,,50%,300,0
+520,"Tuesday, February 4, 2025",Mustafa Ali,Ezzat Sha3lan,examin.,,600,600,,300,,,300,300,,,50%,300,0
+521,"Tuesday, February 4, 2025",Omar Ahmed,Ezzat Sha3lan,examin.,,600,600,,300,,,300,300,,,50%,300,0
+522,"Tuesday, February 4, 2025",Afaf Mohammed,Gamal Abdelsadik,examin.,,400,400,,,,,400,400,,,50%,200,200
+523,"Tuesday, February 4, 2025",Sohair Abdelhameid,Gamal Abdelsadik,examin.,,400,400,,,,,400,400,,,50%,200,200
+524,"Tuesday, February 4, 2025",Sohair Abdelhameid,Gamal Abdelsadik,other,dressing+ RBS,280,280,,,,,280,280,,,50%,140,140
+525,"Tuesday, February 4, 2025",Muhannad Ahmed,Hany Mouharam,examin.,,400,400,,,,,400,400,,,50%,200,200
+526,"Tuesday, February 4, 2025",Hussein Mahmoud,Ahmed Sa3d,examin.,,400,400,,,,,400,400,,,50%,200,200
+527,"Tuesday, February 4, 2025",Shimaa Mohamed,Mahmoud Al-bosaily,Consult.,,0,0,,,,,0,0,,,50%,0,0
+528,"Tuesday, February 4, 2025",Fady Nabil,Mahmoud Al-bosaily,Consult.,,0,0,,,,,0,0,,,50%,0,0
+529,"Wednesday, February 5, 2025",Obay Ahmed,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,250,150,150,,,50%,75,75
+530,"Wednesday, February 5, 2025",Nour Ahmed,Bahaa Dwedar,examin.,voda Cash,400,0,400,,p.vezeta,250,-250,150,,,50%,75,75
+531,"Wednesday, February 5, 2025",Nour Ahmed,Bahaa Dwedar,other,"فتح خراج كبير تحت مخدر/
+instapay",4000,300,3700,,,,300,4000,,,50%,2000,2000
+532,"Wednesday, February 5, 2025",Haidy Waleed,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,250,150,150,,,50%,75,75
+533,"Wednesday, February 5, 2025",Ahmed Hussam,Bahaa Dwedar,Consult.,,0,0,,,,,0,0,,,50%,0,0
+534,"Wednesday, February 5, 2025",Obay Ahmed,Bahaa Dwedar,other,خياطه تجميليه / instapay,1000,0,1000,,,,0,1000,,,50%,500,500
+535,"Wednesday, February 5, 2025",Yousef Essam,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+536,"Wednesday, February 5, 2025",Maymuna Abdelrhman,Abdelaziz Abo El3ela,examin.,,600,600,,,p.vezeta,350,250,250,,,50%,125,125
+537,"Wednesday, February 5, 2025",Ashraf Mohammed,Abdelaziz Abo El3ela,examin.,,600,600,,,p.vezeta,350,250,250,,,50%,125,125
+538,"Wednesday, February 5, 2025",Mounera Ahmed,Nermin Ibrahim,session,skin booster,650,650,,390,,,260,260,,,60%,390,0
+539,"Wednesday, February 5, 2025",Goudy Ezzat,mous3ab ismail,Consult.,حشو عادي للاسنان,1400,1400,,,,,1400,1400,,,40%,560,560
+540,"Wednesday, February 5, 2025",Mohammed Adel,Gamal Abdelsadik,examin.,,400,400,,,clindo,115,285,285,,,50%,142.5,142.5
+541,"Wednesday, February 5, 2025",Mohammed Adel,Gamal Abdelsadik,Consult.,dressing,250,250,,,,,250,250,,,50%,125,125
+542,"Wednesday, February 5, 2025",Sondos Emad,Gamal Abdelsadik,examin.,,400,400,,,,,400,400,,,50%,200,200
+543,"Wednesday, February 5, 2025",Saged Abdelrahman,Basma Rabe3,examin.,,400,400,,200,,,200,200,,,50%,200,0
+544,"Wednesday, February 5, 2025",Aymen Kamal,Mahmoud Al-bosaily,examin.,,200,200,,,,,200,200,,,50%,100,100
+545,"Wednesday, February 5, 2025",Donia Ebraheim,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+546,"Wednesday, February 5, 2025",Dalia Ebraheim,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+547,"Wednesday, February 5, 2025",Asmaa Abdelrahman,Yousry Abdelghafar,examin.,,600,600,,300,,,300,300,,,50%,300,0
+548,"Wednesday, February 5, 2025",Alsayeda Ebeid,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+549,"Wednesday, February 5, 2025",Salma Suliman,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+550,"Wednesday, February 5, 2025",Sagda Mohamed,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+551,"Wednesday, February 5, 2025",Omar Ashraf,Ahmed Temsah,examin.,,500,500,,250,,,250,250,,,50%,250,0
+552,"Wednesday, February 5, 2025",Sayed Ahmed,Hany Mouharam,examin.,غسيل اذنين,550,550,,,,,550,550,,,50%,275,275
+553,"Wednesday, February 5, 2025",Yousef Essam,Hany Mouharam,examin.,,400,400,,,,,400,400,,,50%,200,200
+554,"Wednesday, February 5, 2025",Ahmed Ashraf,Hany Mouharam,other,منظار حنجري,600,600,,,,,600,600,,,50%,300,300
+555,"Wednesday, February 5, 2025",Farida Elnahrawy,Moustafa Elhefnawy,session,instapay,400,0,400,,,,0,400,,,50%,200,200
+556,"Wednesday, February 5, 2025",Mohamed Hassan,Moustafa Elhefnawy,session,,400,400,,,,,400,400,,,50%,200,200
+557,"Wednesday, February 5, 2025",Afaf Abdelfattah,Moustafa Elhefnawy,session,,0,0,,,,,0,0,,,50%,0,0
+558,"Wednesday, February 5, 2025",Omaima Ebraheim,Moustafa Elhefnawy,session,,0,0,,,,,0,0,,,50%,0,0
+559,"Wednesday, February 5, 2025",Eman ,Moustafa Elhefnawy,session,,0,0,,,,,0,0,,,50%,0,0
+560,"Wednesday, February 5, 2025",Mohammed Adel,Ms. Sawsan,other,اختبار + تركيب كانيولا,75,75,,,,,75,75,,,0%,0,0
+561,"Thursday, February 6, 2025",Sou3ad Saleh,Gamal Abdelsadik,Consult.,dressing,800,800,,500,,,300,300,,,50%,400,-100
+562,"Thursday, February 6, 2025",Hatem Mohamed,Gamal Abdelsadik,examin.,,400,400,,,,,400,400,,,50%,200,200
+563,"Thursday, February 6, 2025",Samira Ahmed,Mona Abdelfatah,examin.,,500,500,,250,,,250,250,,,50%,250,0
+564,"Thursday, February 6, 2025",Abderahman Ali,Mona Abdelfatah,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+565,"Thursday, February 6, 2025",Yasmeen Magdy,Basma Rabe3,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+566,"Thursday, February 6, 2025",Mohamed Ragab,Ezzat Sha3lan,examin.,,500,0,500,500,,,-500,0,,,50%,250,-250
+567,"Thursday, February 6, 2025",D/Hend,Ezzat Sha3lan,examin.,,2000,2000,,1000,,,1000,1000,,,50%,1000,0
+568,"Thursday, February 6, 2025",Mervat Mahrous,Hany Mouharam,Consult.,dressind,200,200,,,,,200,200,,,50%,100,100
+569,"Thursday, February 6, 2025",Ebraheim Ali,Hany Mouharam,Consult.,,100,100,,,,,100,100,,,50%,50,50
+570,"Thursday, February 6, 2025",Mohamed Salah,Marwa Abo elwafa,session,جلسة تخاطب,350,350,,175,,,175,175,,,50%,175,0
+571,"Thursday, February 6, 2025",Esraa Ahmed,Ahmed Sa3d,examin.,instapay,160,0,160,,,,0,160,نقابة المهندسين,60,50%,80,80
+572,"Thursday, February 6, 2025",Rania Hofny,Ahmed Sa3d,examin.,,400,400,,,,,400,400,,,50%,200,200
+573,"Thursday, February 6, 2025",Asma ,Bahaa Dwedar,examin.,,400,400,,,,,400,400,,,50%,200,200
+574,"Saturday, February 8, 2025",Mohamed Salah,Marwa Abo elwafa,other,اختبار لغة للطفل,500,500,,250,,,250,250,,,50%,250,0
+575,"Saturday, February 8, 2025",Moustafa Attif,Abdelaziz Abo El3ela,examin.,,600,600,,,p.vezeta,350,250,250,,,50%,125,125
+576,"Saturday, February 8, 2025",Nasr eldin Othman,Abdelaziz Abo El3ela,examin.,,600,600,,,,,600,600,,,50%,300,300
+577,"Saturday, February 8, 2025",Seham Mohamed,Abdelaziz Abo El3ela,Consult.,,100,100,,,,,100,100,,,50%,50,50
+578,"Saturday, February 8, 2025",Mohamed Mamdouh,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,250,150,150,,,50%,75,75
+579,"Saturday, February 8, 2025",Nada Osama,Bahaa Dwedar,examin.,instapay,400,0,400,,p.vezeta,250,-250,150,,,50%,75,75
+580,"Saturday, February 8, 2025",Nada Osama,Bahaa Dwedar,other,ازالة ظفر غائر/ instapay,1500,0,1500,,,,0,1500,,,50%,750,750
+581,"Saturday, February 8, 2025",Nour Ahmed,Bahaa Dwedar,Consult.,dressing,350,350,,,,,350,350,,,50%,175,175
+582,"Saturday, February 8, 2025",Zeyad Yaser,Bahaa Dwedar,Consult.,ازالة ظفر غائر ناحيتين,3000,3000,,,,,3000,3000,,,50%,1500,1500
+583,"Saturday, February 8, 2025",Waleed Sulaiman,Bahaa Dwedar,Consult.,dressing,250,250,,,,,250,250,,,50%,125,125
+584,"Saturday, February 8, 2025",Mohamed Tharwat,Gamal abdelsadik,examin.,,400,400,,,,,400,400,,,50%,200,200
+585,"Saturday, February 8, 2025",Aya Ahmed,Gamal abdelsadik,examin.,,400,400,,,,,400,400,,,50%,200,200
+586,"Saturday, February 8, 2025",Ahmed Aldawy,Gamal abdelsadik,examin.,,400,400,,,,,400,400,,,50%,200,200
+587,"Saturday, February 8, 2025",Nada Ahmed,Ezzat Sha3lan,Consult.,,400,400,,200,,,200,200,,,50%,200,0
+588,"Saturday, February 8, 2025",Aml Fathy,Ezzat Sha3lan,examin.,,700,700,,350,,,350,350,,,50%,350,0
+589,"Saturday, February 8, 2025",Abdelmgeid khaif,Ahmed Temsah,examin.,,500,500,,250,,,250,250,,,50%,250,0
+590,"Saturday, February 8, 2025",Gamal Zaky,Ahmed Temsah,examin.,,500,500,,250,,,250,250,,,50%,250,0
+591,"Saturday, February 8, 2025",Mohammed Badwy,Mohamed El-seba3y,examin.,,400,400,,200,,,200,200,,,50%,200,0
+592,"Saturday, February 8, 2025",Yousra Mustafa,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+593,"Saturday, February 8, 2025",Asmaa Abdelrahman,Yousry Abdelghafar,Consult.,,100,100,,50,,,50,50,,,50%,50,0
+594,"Saturday, February 8, 2025",Farida Aln7rawy,Moustafa Elhefnawy,session,instapay,400,0,400,,,,0,400,,,50%,200,200
+595,"Saturday, February 8, 2025",Mohamed Hassan,Moustafa Elhefnawy,session,,400,400,,,,,400,400,,,50%,200,200
+596,"Saturday, February 8, 2025",Shimaa Reda,Hany Mouharam,examin.,,400,400,,,,,400,400,,,50%,200,200
+597,"Sunday, February 9, 2025",Khaled Salah,Hany Mouharam,other,dressing,500,500,,,,,500,500,,,50%,250,250
+598,"Sunday, February 9, 2025",Abdullah Osama,Bahaa Dwedar,examin.,,400,400,,,p.vezeta,250,150,150,,,50%,75,75
+599,"Sunday, February 9, 2025",Nada Osama ,Bahaa Dwedar,Consult.,dressing/ instapay,250,0,250,,,,0,250,,,50%,125,125
+600,"Sunday, February 9, 2025",Gamal Sayed ,Waled Qadah,examin.,,400,400,,160,ekshef,80,160,160,,,50%,160,0
+601,"Sunday, February 9, 2025",Shaimaa Mohamed,Mahmoud Al-bosaily,Consult.,,10000,10000,,,,,10000,10000,,,50%,5000,5000
