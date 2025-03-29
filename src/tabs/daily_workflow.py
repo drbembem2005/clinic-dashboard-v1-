@@ -284,7 +284,6 @@ def render_daily_workflow_tab(df_financial_data): # df_financial_data is needed 
                      if end_time_recorded:
                          st.metric("Ended", end_time_str)
 
-    st.set_page_config(layout="wide")
     # Requires dummy financial data if get_distinct_doctors needs it
     dummy_financial_data = pd.DataFrame({'Doctor': []})
     render_daily_workflow_tab(dummy_financial_data)
