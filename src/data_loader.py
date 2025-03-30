@@ -56,8 +56,14 @@ def load_data():
     df_data["advertising_commission"] = df_data["com pay"]
 
     # --- Profit Calculation ---
-    df_data["total_deductions"] = df_data["total_commission"] + df_data["advertising_commission"]
-    df_data["profit"] = df_data["gross income"] - df_data["total_deductions"]
+    # Ensure 'profit' column exists or calculate it
+    if 'profit' not in df_data.columns:
+        df_data["total_deductions"] = df_data["total_commission"] + df_data["advertising_commission"]
+        df_data["profit"] = df_data["gross income"] - df_data["total_deductions"]
+    else:
+        # Ensure profit is numeric if it exists
+        df_data['profit'] = pd.to_numeric(df_data['profit'], errors='coerce').fillna(0)
+
 
     # Avoid division by zero for profit margin
     df_data["profit_margin_pct"] = np.where(
@@ -105,8 +111,9 @@ def load_data():
 
     # --- Simulated Data (Placeholder) ---
     # Calculate visit duration (random for demonstration - replace if real data exists)
-    np.random.seed(42)
-    df_data["visit_duration_mins"] = np.random.randint(15, 60, size=len(df_data))
+    if "visit_duration_mins" not in df_data.columns:
+        np.random.seed(42)
+        df_data["visit_duration_mins"] = np.random.randint(15, 60, size=len(df_data))
 
     # --- Final Checks ---
     # Ensure essential columns are present
@@ -117,7 +124,8 @@ def load_data():
             if col == 'id':
                 st.warning("Column 'id' not found. Creating a unique ID from index.")
                 df_data['id'] = df_data.index.astype(str)
-            else:
+            # Skip profit check here as we calculate it above if missing
+            elif col != 'profit':
                 st.error(f"Essential column '{col}' is missing after preprocessing. Stopping.")
                 st.stop()
 
@@ -379,5 +387,281 @@ def get_distinct_patients():
     except sqlite3.Error as e:
         st.error(f"Database error getting distinct patients: {e}")
         return []
+    finally:
+        conn.close()
+
+
+# --- Cost Data Handling (SQLite) ---
+
+def create_costs_table():
+    """Creates the costs table if it doesn't exist."""
+    conn = connect_db()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS costs (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                expense_date TEXT NOT NULL, -- Renamed from entry_date (Date cost incurred)
+                payment_date TEXT,          -- Date cost was paid (can be NULL if not yet paid)
+                category TEXT NOT NULL,
+                item TEXT NOT NULL,
+                amount REAL NOT NULL,
+                recorded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        """)
+        conn.commit() # Commit table creation first
+
+        # Now, attempt to create indexes separately
+        try:
+            cursor.execute("DROP INDEX IF EXISTS idx_costs_entry_date") # Drop old index if exists
+            cursor.execute("CREATE INDEX IF NOT EXISTS idx_costs_expense_date ON costs (expense_date)")
+            cursor.execute("CREATE INDEX IF NOT EXISTS idx_costs_payment_date ON costs (payment_date)")
+            cursor.execute("CREATE INDEX IF NOT EXISTS idx_costs_category ON costs (category)")
+            conn.commit() # Commit index creation
+        except sqlite3.Error as e_index:
+            # Warn if index creation fails, but don't stop the app
+            st.warning(f"Database warning creating indexes for costs table: {e_index}")
+
+    except sqlite3.Error as e_table:
+        st.error(f"Database error creating costs table: {e_table}")
+    finally:
+        conn.close()
+
+def update_costs_schema():
+    """Adds new columns to the costs table if they don't exist."""
+    conn = connect_db()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("PRAGMA table_info(costs)")
+        columns = [info['name'] for info in cursor.fetchall()]
+        if 'expense_date' not in columns:
+            # If expense_date doesn't exist, assume entry_date might, try renaming first
+            try:
+                cursor.execute("ALTER TABLE costs RENAME COLUMN entry_date TO expense_date")
+                st.info("Renamed 'entry_date' column to 'expense_date' in costs table.")
+            except sqlite3.Error:
+                # If rename fails (e.g., entry_date also doesn't exist), add expense_date
+                cursor.execute("ALTER TABLE costs ADD COLUMN expense_date TEXT")
+                st.info("Added 'expense_date' column to costs table.")
+        if 'payment_date' not in columns:
+            cursor.execute("ALTER TABLE costs ADD COLUMN payment_date TEXT")
+            st.info("Added 'payment_date' column to costs table.")
+        conn.commit()
+    except sqlite3.Error as e:
+        st.warning(f"Could not update costs table schema: {e}")
+    finally:
+        conn.close()
+
+# Ensure the costs table exists and schema is updated when the module is loaded
+create_costs_table()
+update_costs_schema() # Call the new schema update function
+
+def add_cost(expense_date, payment_date, category, item, amount):
+    """Adds a new cost entry to the database."""
+    conn = connect_db()
+    cursor = conn.cursor()
+    # Ensure dates are stored in YYYY-MM-DD format
+    expense_date_str = expense_date.isoformat() if isinstance(expense_date, date) else str(expense_date)
+    # Payment date can be None
+    payment_date_str = payment_date.isoformat() if isinstance(payment_date, date) else None
+    try:
+        cursor.execute("""
+            INSERT INTO costs (expense_date, payment_date, category, item, amount)
+            VALUES (?, ?, ?, ?, ?)
+        """, (expense_date_str, payment_date_str, category, item, amount))
+        conn.commit()
+        return True
+    except sqlite3.Error as e:
+        st.error(f"Database error adding cost: {e}")
+        return False
+    finally:
+        conn.close()
+
+def get_costs(start_date_filter=None, end_date_filter=None, date_column='expense_date'):
+    """
+    Retrieves cost entries from the database, optionally filtered by a specified date column.
+
+    Args:
+        start_date_filter (date, optional): Start date for filtering.
+        end_date_filter (date, optional): End date for filtering.
+        date_column (str, optional): The date column to filter on ('expense_date' or 'payment_date').
+                                     Defaults to 'expense_date'.
+    """
+    conn = connect_db()
+    cursor = conn.cursor()
+    # Select all relevant columns
+    query = "SELECT id, expense_date, payment_date, category, item, amount, recorded_at FROM costs"
+    filters = []
+    params = []
+
+    # Validate date_column input
+    if date_column not in ['expense_date', 'payment_date']:
+        st.warning(f"Invalid date column '{date_column}' specified for filtering costs. Defaulting to 'expense_date'.")
+        date_column = 'expense_date'
+
+    if start_date_filter:
+        start_date_str = start_date_filter.isoformat() if isinstance(start_date_filter, date) else str(start_date_filter)
+        filters.append(f"{date_column} >= ?")
+        params.append(start_date_str)
+    if end_date_filter:
+        end_date_str = end_date_filter.isoformat() if isinstance(end_date_filter, date) else str(end_date_filter)
+        filters.append(f"{date_column} <= ?")
+        params.append(end_date_str)
+
+    # Ensure filtering by payment_date doesn't exclude unpaid items unless intended
+    # If filtering by payment_date, we might only want rows where payment_date is not NULL
+    # However, the current logic includes NULLs if they fall outside the date range, which might be okay.
+    # Add this if you only want paid items within the range when filtering by payment_date:
+    # if date_column == 'payment_date':
+    #     filters.append("payment_date IS NOT NULL")
+
+
+    if filters:
+        query += " WHERE " + " AND ".join(filters)
+
+    query += f" ORDER BY {date_column} DESC, recorded_at DESC" # Order by the filtered date column
+
+    try:
+        cursor.execute(query, params)
+        costs = cursor.fetchall()
+        # Convert to DataFrame
+        df_costs = pd.DataFrame([dict(row) for row in costs])
+        # Convert date columns back from string
+        if not df_costs.empty:
+            df_costs['expense_date'] = pd.to_datetime(df_costs['expense_date'], errors='coerce').dt.date
+            # payment_date might be NaT if NULL in DB
+            df_costs['payment_date'] = pd.to_datetime(df_costs['payment_date'], errors='coerce').dt.date
+            df_costs['recorded_at'] = pd.to_datetime(df_costs['recorded_at'], errors='coerce')
+        return df_costs
+    except sqlite3.Error as e:
+        st.error(f"Database error getting costs: {e}")
+        return pd.DataFrame() # Return empty DataFrame on error
+    finally:
+        conn.close()
+
+# --- Goal Setting Data Handling (SQLite) ---
+
+def create_goals_table():
+    """Creates the goals table if it doesn't exist."""
+    conn = connect_db()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS goals (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                metric_name TEXT NOT NULL,
+                target_value REAL NOT NULL,
+                time_period TEXT NOT NULL, -- 'Monthly', 'Quarterly', 'Yearly', 'Custom Range'
+                start_date TEXT,          -- YYYY-MM-DD, only for 'Custom Range'
+                end_date TEXT,            -- YYYY-MM-DD, only for 'Custom Range'
+                is_active INTEGER DEFAULT 1, -- 1 for active, 0 for inactive
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        """)
+        conn.commit()
+        # Add indexes
+        cursor.execute("CREATE INDEX IF NOT EXISTS idx_goals_metric_name ON goals (metric_name)")
+        cursor.execute("CREATE INDEX IF NOT EXISTS idx_goals_is_active ON goals (is_active)")
+        conn.commit()
+    except sqlite3.Error as e:
+        st.error(f"Database error creating goals table: {e}")
+    finally:
+        conn.close()
+
+def update_goals_schema():
+    """Adds new columns to the goals table if they don't exist (for future use)."""
+    # Placeholder for future schema changes if needed
+    pass
+
+# Ensure the goals table exists and schema is updated
+create_goals_table()
+update_goals_schema()
+
+def add_goal(metric_name, target_value, time_period, start_date=None, end_date=None, is_active=1):
+    """Adds a new goal to the database."""
+    conn = connect_db()
+    cursor = conn.cursor()
+    start_date_str = start_date.isoformat() if isinstance(start_date, date) else None
+    end_date_str = end_date.isoformat() if isinstance(end_date, date) else None
+    try:
+        cursor.execute("""
+            INSERT INTO goals (metric_name, target_value, time_period, start_date, end_date, is_active)
+            VALUES (?, ?, ?, ?, ?, ?)
+        """, (metric_name, target_value, time_period, start_date_str, end_date_str, is_active))
+        conn.commit()
+        return True
+    except sqlite3.Error as e:
+        st.error(f"Database error adding goal: {e}")
+        return False
+    finally:
+        conn.close()
+
+def get_goals(active_only=False):
+    """Retrieves goals from the database."""
+    conn = connect_db()
+    cursor = conn.cursor()
+    query = "SELECT * FROM goals"
+    params = []
+    if active_only:
+        query += " WHERE is_active = ?"
+        params.append(1)
+    query += " ORDER BY created_at DESC"
+    try:
+        cursor.execute(query, params)
+        goals = cursor.fetchall()
+        df_goals = pd.DataFrame([dict(row) for row in goals])
+        # Convert date columns if they exist
+        if not df_goals.empty:
+            for col in ['start_date', 'end_date', 'created_at']:
+                 if col in df_goals.columns:
+                     df_goals[col] = pd.to_datetime(df_goals[col], errors='coerce')
+                     # Convert start/end date back to date only if needed, handle NaT
+                     if col in ['start_date', 'end_date']:
+                         df_goals[col] = df_goals[col].dt.date
+        return df_goals
+    except sqlite3.Error as e:
+        st.error(f"Database error getting goals: {e}")
+        return pd.DataFrame()
+    finally:
+        conn.close()
+
+def update_goal(goal_id, updates):
+    """Updates an existing goal (e.g., toggle active status, change target)."""
+    conn = connect_db()
+    cursor = conn.cursor()
+    set_clauses = []
+    params = []
+
+    # Convert dates to strings if present
+    if 'start_date' in updates and isinstance(updates['start_date'], date):
+        updates['start_date'] = updates['start_date'].isoformat()
+    if 'end_date' in updates and isinstance(updates['end_date'], date):
+        updates['end_date'] = updates['end_date'].isoformat()
+
+    for key, value in updates.items():
+        # Ensure we only try to update valid columns
+        valid_columns = [
+            "metric_name", "target_value", "time_period",
+            "start_date", "end_date", "is_active"
+        ]
+        if key in valid_columns:
+            set_clauses.append(f"{key} = ?")
+            params.append(value)
+
+    if not set_clauses:
+        st.warning("No valid fields provided for goal update.")
+        conn.close()
+        return False
+
+    params.append(goal_id) # For the WHERE clause
+    query = f"UPDATE goals SET {', '.join(set_clauses)} WHERE id = ?"
+
+    try:
+        cursor.execute(query, params)
+        conn.commit()
+        return cursor.rowcount > 0 # Return True if a row was updated
+    except sqlite3.Error as e:
+        st.error(f"Database error updating goal {goal_id}: {e}")
+        return False
     finally:
         conn.close()

@@ -4,6 +4,14 @@ import pandas as pd # Keep pandas for potential use
 import sys # To modify path for imports
 import os # To construct path
 
+# --- Page Configuration (MUST BE FIRST STREAMLIT COMMAND) ---
+st.set_page_config(
+    page_title="Advanced Clinic Financial Analytics Dashboard",
+    page_icon="💉",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 # Add src directory to Python path
 # Get the directory of the current script
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -26,6 +34,10 @@ try:
     from tabs.detailed_reports import render_detailed_reports_tab
     from tabs.appointment_scheduling import render_appointment_scheduling_tab
     from tabs.daily_workflow import render_daily_workflow_tab # Added import for daily workflow
+    from tabs.cost_entry import render_cost_entry_tab # Added import for cost entry
+    from tabs.cost_analysis import render_cost_analysis_tab # Added import for cost analysis
+    from tabs.goal_setting import render_goal_setting_tab # Added import for goal setting
+    from tabs.goal_tracking import render_goal_tracking_tab # Added import for goal tracking
 except ImportError as e:
     st.error(f"Error importing modules: {e}")
     st.error(f"Current sys.path: {sys.path}")
@@ -33,15 +45,8 @@ except ImportError as e:
     st.stop()
 
 
-# --- Page Configuration ---
-st.set_page_config(
-    page_title="Advanced Clinic Financial Analytics Dashboard",
-    page_icon="💉",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
-
 # --- Main Header ---
+# Page config moved to the top
 st.title("Advanced Clinic Financial Analytics Dashboard")
 
 # --- Load Data ---
@@ -67,8 +72,12 @@ tab_list = [
     "👨‍⚕️ Doctor Analytics",
     "👥 Patient Insights",
     "🔍 Operational Metrics",
-    "⏱️ Daily Workflow", # Added new tab
+    "⏱️ Daily Workflow",
     "📅 Appointment Scheduling",
+    "💸 Cost Entry",
+    "📊 Cost Analysis",
+    "🎯 Goal Setting", # Added new tab
+    "📈 Goal Tracking", # Added new tab (Changed emoji for visual distinction)
     "🤖 AI Predictions & Analytics",
     "📋 Detailed Reports"
 ]
@@ -101,9 +110,23 @@ with tabs[6]:
     render_appointment_scheduling_tab(df_data)
 
 with tabs[7]:
-    render_ai_predictions_tab(filtered_df)
+    render_cost_entry_tab() # Call to render the cost entry tab
 
 with tabs[8]:
+    # Pass filtered revenue df, start_date, end_date to cost analysis
+    render_cost_analysis_tab(filtered_df, start_date, end_date)
+
+with tabs[9]:
+    render_goal_setting_tab() # Call to render goal setting
+
+with tabs[10]:
+    # Pass necessary dataframes and dates for goal tracking calculations
+    render_goal_tracking_tab(filtered_df, df_data, start_date, end_date)
+
+with tabs[11]:
+    render_ai_predictions_tab(filtered_df)
+
+with tabs[12]:
     render_detailed_reports_tab(filtered_df, start_date, end_date) # Pass start/end dates for report range default
 
 # --- Footer or Final Message (Optional) ---
